@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/font_Noto_Sans_KR(no_italic).css">
+  <link rel="stylesheet" href="./assets/css/skip_menu.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <style>
+    :root{
+      font-family: 'Noto Sans KR',sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #333;
+    }
+    ::selection{
+      background-color: #474747;
+      color: #fff;
+    }
+    /* modal은 데스크탑 전용 */
+    #modal{
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1200;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    #modal.active{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #modal-body{
+      position: relative;
+      width: 1190px;
+      max-width: calc(100% - 8em);
+      max-height: calc(100vh - 8em);
+      margin: 4rem;
+      border-radius: 1rem;
+      padding: 2.5rem;
+    }
+    #modal-body .depth1>li{
+      color: #0053b5;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="skip-menu">
+    <a href="#"></a>
+    <a href="#"></a>
+  </div>
+
+  <div id="modal"><!-- z-index:1200 -->
+    <div id="modal-body">
+      <ul class="depth1">
+        <li><span>인천소식</span></li>
+        <div class="depth2-wrap">
+          <ul class="depth2">
+            <li><a href="#">새소식</a></li>
+            <li><a href="#">주요행사정보</a></li>
+            <li>
+              <a href="#">보도/해명</a>
+              <ul class="depth3">
+                <li><a href="#">보도자료</a></li>
+                <li><a href="#">바로잡습니다</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">고시/공고/시보</a>
+              <ul class="depth3">
+                <li><a href="#">고시공고</a></li>
+                <li><a href="#">인천시보</a></li>
+                <li><a href="#">반상회보</a></li>
+                <li><a href="#">입법예고</a></li><!-- linkhtml icon 넣기 -->
+              </ul>
+            </li>
+            <li><a href="#">매체모음</a></li>
+            <li><a href="#">카드뉴스</a></li>
+          </ul>
+        </div>
+      </ul>
+      <button id="btn-modal-close"></button>
+    </div>
+  </div>
+  <section id="wrap"></section>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      direction: 'vertical',
+      loop: true,
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
+  </script>
+</body>
+</html>
