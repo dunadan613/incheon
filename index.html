@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./assets/css/font_Noto_Sans_KR(no_italic).css">
   <link rel="stylesheet" href="./assets/css/skip_menu.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="./assets/css/modal.css">
   <style>
     :root{
       font-family: 'Noto Sans KR',sans-serif;
@@ -16,40 +17,36 @@
       font-size: 16px;
       line-height: 1.8;
       color: #333;
+      --color-info-hover-bg:#c3ebeb;
+      --color-text-active:#0053b5;
     }
     ::selection{
       background-color: #474747;
       color: #fff;
     }
     /* modal은 데스크탑 전용 */
-    #modal{
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 1200;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.3);
-    }
-    #modal.active{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    #modal-body{
-      position: relative;
-      width: 1190px;
-      max-width: calc(100% - 8em);
-      max-height: calc(100vh - 8em);
-      margin: 4rem;
-      border-radius: 1rem;
-      padding: 2.5rem;
-    }
-    #modal-body .depth1>li{
-      color: #0053b5;
-    }
+
+    /* 글로벌 헤더는 항상 있음&헤더 따라오지 않음
+       헤더 내려올 때 모달버튼 왼쪽으로 밀리면서 검색버튼 나타남 */
+
+    /* 주요서비스 두줄로 변경
+       소식과 주민참여 알림 각각 100%로 넓어짐
+       사이트 맵 네비 배치 3-2로 변경
+       푸터 사이트맵-링크-국기/로고-주소/저작권 표기-콜센터 로고 순으로 한줄씩 차지 */
+    @media(max-width:1180px){}
+
+
+    /* 헤더 유틸 상세 네비 안으로 들어감
+       헤더 네비 모바일식 변경
+       모달 비활성화
+       헤더 아래 슬로건/검색창/날씨정보 사라짐
+       검색창은 헤더 왼쪽 로고는 가운데 이동
+       헤더 아래 두칸짜리 두줄로 변경
+       주요서비스 네줄로 변경
+       일일뉴스 한줄로
+       sns구역 로고-아이콘 순으로 두줄
+       푸터 스타일 유지 */
+    @media(max-width:1025px){}
   </style>
 </head>
 <body>
@@ -61,39 +58,329 @@
 
   <div id="modal"><!-- z-index:1200 -->
     <div id="modal-body">
-      <ul class="depth1">
-        <li><span>인천소식</span></li>
-        <div class="depth2-wrap">
-          <ul class="depth2">
-            <li><a href="#">새소식</a></li>
-            <li><a href="#">주요행사정보</a></li>
-            <li>
-              <a href="#">보도/해명</a>
-              <ul class="depth3">
-                <li><a href="#">보도자료</a></li>
-                <li><a href="#">바로잡습니다</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">고시/공고/시보</a>
-              <ul class="depth3">
-                <li><a href="#">고시공고</a></li>
-                <li><a href="#">인천시보</a></li>
-                <li><a href="#">반상회보</a></li>
-                <li><a href="#">입법예고</a></li><!-- linkhtml icon 넣기 -->
-              </ul>
-            </li>
-            <li><a href="#">매체모음</a></li>
-            <li><a href="#">카드뉴스</a></li>
-          </ul>
-        </div>
+      <ul class="modal-depth1">
+        <li>
+          <h2><span>인천소식</span></h2>
+          <div class="modal-depth2-wrap">
+            <ul class="modal-depth2"><!-- display:flex -->
+              <li><a href="#"><span>새소식</span></a></li>
+              <li><a href="#"><span>주요행사정보</span></a></li>
+              <li>
+                <a href="#"><span>보도/해명</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>보도자료</span></a></li>
+                  <li><a href="#"><span>바로잡습니다</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>고시/공고/시보</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span class="linkhtml">고시공고</span></a></li>
+                  <li><a href="#"><span>인천시보</span></a></li>
+                  <li><a href="#"><span>반상회보</span></a></li>
+                  <li><a href="#"><span class="linkhtml">입법예고</span></a></li><!-- linkhtml icon 넣기 -->
+                </ul>
+              </li>
+              <li><a href="#"><span>매체모음</span></a></li>
+              <li><a href="#"><span>카드뉴스</span></a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <h2><span>소통참여</span></h2>
+          <div class="modal-depth2-wrap">
+            <ul class="modal-depth2"><!-- display:flex -->
+              <li><a href="#"><span class="linkhtml">제안/토론</span></a></li>
+              <li><a href="#"><span class="linkhtml">주민참여예산</span></a></li>
+              <li>
+                <a href="#"><span>비영리단체</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>비영리단체 되기</span></a></li>
+                  <li><a href="#"><span>비영리단체 회원</span></a></li>
+                  <li><a href="#"><span>비영리단체 메뉴 이용 신청</span></a></li>
+                  <li><a href="#"><span>공익활동 지원사업</span></a></li>
+                  <li><a href="#"><span>비영리단체 사랑방</span></a></li>
+                  <li><a href="#"><span>자료실</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>중간지원조직 네트워크</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>네트워크 구성이야기</span></a></li>
+                  <li><a href="#"><span>네트워크 활동이야기</span></a></li>
+                  <li><a href="#"><span>네트워크 협치이야기</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>스마트도시 리빙랩</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>스마트도시 리빙랩 소개</span></a></li>
+                  <li><a href="#"><span>시민참여계획</span></a></li>
+                  <li><a href="#"><span>시민활동현황</span></a></li>
+                  <li><a href="#"><span>관련자료실</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>시민의소리</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>자유게시판</span></a></li>
+                  <li><a href="#"><span>칭찬합니다</span></a></li>
+                </ul>
+              </li>
+              <li><a href="#"><span class="linkhtml">설문조사</span></a></li>
+              <li><a href="#"><span class="linkhtml">이벤트</span></a></li>
+              <li><a href="#"><span class="linkhtml">공모전</span></a></li>
+              <li>
+                <a href="#"><span>문자알림서비스</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>맞춤형 시정정보</span></a></li>
+                  <li><a href="#"><span class="linkhtml">인천알리미</span></a></li>
+                  <li><a href="#"><span class="linkhtml">대기환경정보</span></a></li>
+                  <li><a href="#"><span class="linkhtml">주정차 위반 단속</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>인천愛뜰 사용허가 신청</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>인천愛뜰 소개</span></a></li>
+                  <li><a href="#"><span>인천愛뜰 사용허가 절차</span></a></li>
+                  <li><a href="#"><span>인천愛뜰 사용허가 신청</span></a></li>
+                  <li><a href="#"><span>허가조건/유의사항</span></a></li>
+                  <li><a href="#"><span>행사일정</span></a></li>
+                </ul>
+              </li>
+              <li><a href="#"><span>대학생 아르바이트</span></a></li>
+              <li><a href="#"><span>대학생 학자금대출이자지원신청</span></a></li>
+              <li><a href="#"><span>생생시정견학</span></a></li>
+              <li>
+                <a href="#"><span>고향사랑기부제</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>제도 취지</span></a></li>
+                  <li><a href="#"><span>인천시 대표 답례품</span></a></li>
+                  <li><a href="#"><span>기금사업</span></a></li>
+                  <li><a href="#"><span>각종 홍보자료</span></a></li>
+                  <li><a href="#"><span>기부방법 및 절차</span></a></li>
+                  <li><a href="#"><span>기부금 접수·운용 현황</span></a></li>
+                  <li><a href="#"><span>자주묻는 질문</span></a></li>
+                  <li><a href="#"><span>제도 관련 건의사항</span></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <h2><span>종합민원</span></h2>
+          <div class="modal-depth2-wrap">
+            <ul class="modal-depth2"><!-- display:flex -->
+              <li>
+                <a href="#"><span>민원안내</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>민원실 이용 안내</span></a></li>
+                  <li><a href="#"><span>정부24(어디서나민원)</span></a></li>
+                  <li><a href="#"><span>무인민원발급받기</span></a></li>
+                  <li><a href="#"><span>여권민원</span></a></li>
+                  <li><a href="#"><span>민원소식</span></a></li>
+                  <li><a href="#"><span class="linkhtml">자동차민원</span></a></li>
+                  <li><a href="#"><span>민원편람(서식)</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>미추홀콜센터</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>센터소개</span></a></li>
+                  <li><a href="#"><span>오시는길</span></a></li>
+                  <li><a href="#"><span>상담안내</span></a></li>
+                  <li><a href="#"><span>전화상담 예약</span></a></li>
+                  <li><a href="#"><span>고마워요 120</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>민원신청</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>민원상담</span></a></li>
+                  <li><a href="#"><span>110 화상수화통화서비스</span></a></li>
+                  <li><a href="#"><span>불공정거래 피해·상가임대차 분쟁상담</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>민원조회</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>민원상담 처리결과</span></a></li>
+                  <li><a href="#"><span>방문민원 처리결과</span></a></li>
+                  <li><a href="#"><span>나의신고제안보기</span></a></li>
+                  <li><a href="#"><span>민원사례조회</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>신고센터</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>부패·공익·부정청탁신고</span></a></li>
+                  <li><a href="#"><span>예산낭비 신고</span></a></li>
+                  <li><a href="#"><span class="linkhtml">안전신고</span></a></li>
+                  <li><a href="#"><span>건설부조리 신고</span></a></li>
+                  <li><a href="#"><span>인권침해 구제</span></a></li>
+                  <li><a href="#"><span>체육인 인권침해 구제</span></a></li>
+                  <li><a href="#"><span>일본 수출규제 피해기업 신청</span></a></li>
+                  <li><a href="#"><span class="linkhtml">불합리 규제신고</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>행정서비스헌장</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>행정서비스헌장 전문</span></a></li>
+                  <li><a href="#"><span>공통이행기준</span></a></li>
+                  <li><a href="#"><span>분야별 이행기준</span></a></li>
+                  <li><a href="#"><span class="linkhtml">온라인행정심판</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>전자팩스수신조회</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>전자팩스수신조회 서비스</span></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <h2><span>인천소개</span></h2>
+          <div class="modal-depth2-wrap">
+            <ul class="modal-depth2"><!-- display:flex -->
+              <li>
+                <a href="#"><span>인천안내</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>인천안내</span></a></li>
+                  <li><a href="#"><span>행정구역</span></a></li>
+                  <li><a href="#"><span class="linkhtml">인천도시브랜드</span></a></li>
+                  <li><a href="#"><span>인천비전슬로건</span></a></li>
+                  <li><a href="#"><span class="linkhtml">인천색</span></a></li>
+                  <li><a href="#"><span>인천노래</span></a></li>
+                  <li><a href="#"><span>미디어로 보는 인천</span></a></li>
+                  <li><a href="#"><span>역대시장</span></a></li>
+                  <li><a href="#"><span>시민상</span></a></li>
+                  <li><a href="#"><span>인천시 QR코드</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>시청안내</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>조직도</span></a></li>
+                  <li><a href="#"><span>직원/담당업무</span></a></li>
+                  <li><a href="#"><span>전화번호/팩스번호 안내</span></a></li>
+                  <li><a href="#"><span>중앙협력본부 안내</span></a></li>
+                  <li><a href="#"><span>부서위치 안내</span></a></li>
+                  <li><a href="#"><span>시설물 대관 안내</span></a></li>
+                  <li><a href="#"><span>주차장이용 안내</span></a></li>
+                  <li><a href="#"><span>찾아오시는 길</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>인천역사</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>유래와 연혁</span></a></li>
+                  <li><a href="#"><span>시대별 역사</span></a></li>
+                  <li><a href="#"><span>인천설화</span></a></li>
+                  <li><a href="#"><span>지명유래</span></a></li>
+                  <li><a href="#"><span>인천인물</span></a></li>
+                  <li><a href="#"><span>사진으로 보는 역사</span></a></li>
+                  <li><a href="#"><span>오늘의 역사</span></a></li>
+                  <li><a href="#"><span>역사자료실</span></a></li>
+                  <li><a href="#"><span>(구)역사자료관</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>賞賞인천</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>기관표창</span></a></li>
+                  <li><a href="#"><span>표창추천 및 후보자 공개검증</span></a></li>
+                  <li><a href="#"><span>반상회보</span></a></li>
+                  <li><a href="#"><span>입법예고</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>행정자료실</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>행정자료실 이용안내</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>국제교류</span></a>
+                <ul class="modal-depth3">
+                  <li><a href="#"><span>자매도시</span></a></li>
+                  <li><a href="#"><span>우호도시</span></a></li>
+                  <li><a href="#"><span>국제기구 소개</span></a></li>
+                  <li><a href="#"><span>국제기구 소식</span></a></li>
+                  <li><a href="#"><span>교류정보</span></a></li>
+                  <li><a href="#"><span>해외도시 교류사진전</span></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <h2><span>분야</span></h2>
+          <div class="modal-depth2-wrap">
+            <ul class="modal-depth2"><!-- display:flex -->
+              <li><a href="#"><span class="linkhtml">교통·도로</span></a></li>
+              <li><a href="#"><span class="linkhtml">농업·수산·해양</span></a></li>
+              <li><a href="#"><span class="linkhtml">문화·관광</span></a></li>
+              <li><a href="#"><span class="linkhtml">교통·도로</span></a></li>
+              <li><a href="#"><span class="linkhtml">도시·주택·토지</span></a></li>
+              <li><a href="#"><span class="linkhtml">경제·투자</span></a></li>
+              <li><a href="#"><span class="linkhtml">건강·식품·체육</span></a></li>
+              <li><a href="#"><span class="linkhtml">복지</span></a></li>
+              <li><a href="#"><span class="linkhtml">재난·안전</span></a></li>
+              <li><a href="#"><span class="linkhtml">환경</span></a></li>
+              <li><a href="#"><span class="linkhtml">행정·법무</span></a></li>
+            </ul>
+          </div>
+        </li>
       </ul>
-      <button id="btn-modal-close"></button>
+      <button id="btn-modal-close"><span>닫기</span></button><!-- z-index:1500 -->
     </div>
   </div>
-  <section id="wrap"></section>
+
+
+  <section id="wrap">
+    <!-- 메모: 애니메이션 효과-주요 서비스 구역 아이템 호버시 위로 움직임
+               헤더부분 아래로 스크롤 시 헤더 화면 위에 고정 -->
+    <header id="header" class="header">
+      <div class="container">
+        <div class="will-fixed">
+          <h1><a href="./index.html"><img src="./assets/images/logo.png" alt="인천광역시"></a></h1>
+          <nav class="nav"></nav>
+        </div>
+        <div class="global-nav"></div>
+        <div class="pc-utillity"></div>
+        <div class="mobile-search-btn"></div>
+      </div>
+    </header>
+    <main id="main" class="main"></main>
+    <footer id="footer" class="footer"></footer>
+  </section>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
+    //-------------------- 함수구역 --------------------
+    function fnSetActive(el,opt){
+      if(opt=='on'){
+        el.classList.add('active');
+      }
+      else if(opt=='off'){
+        el.classList.remove('active');
+      }
+      else{
+        console.log('매개변수 오류');
+      }
+    }
+    function fnSetDisplay(el,opt){
+      el.style.display=opt;
+    }
+    //-------------------- 함수구역 종료 --------------------
+    //-------------------- swiper --------------------
     const swiper = new Swiper('.swiper', {
       // Optional parameters
       direction: 'vertical',
@@ -112,6 +399,16 @@
         el: '.swiper-scrollbar',
       },
     });
+    //-------------------- swiper --------------------
+
+    //-------------------- 모달 제어 --------------------
+    const modal=document.getElementById('modal');
+    const btnModalClose=document.getElementById('btn-modal-close');
+    btnModalClose.onclick=function(){
+      fnSetDisplay(modal,'none');
+      fnSetActive(modal,'off');
+    }
+    //-------------------- 모달 제어 종료 --------------------
   </script>
 </body>
 </html>
