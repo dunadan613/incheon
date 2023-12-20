@@ -27,48 +27,61 @@
 
     /* modal은 데스크탑 전용 */
     #wrap{
-      /* overflow: hidden; */
+      overflow: hidden;
+      margin: 0 auto;
+      height: 3000px;
     }
     .container{
       max-width: 1190px;
       margin: 0 auto;
     }
     /* 헤더 스타일 */
-    .header{
-      border-top: 1px solid #ddd;
-      border-bottom: 1px solid #ddd;
-    }
     .header .container{
       display: grid;
       grid-template-areas: 
       'gnav . pc-utill'
       'head head head'
-      'slogan search weather'
+      'theme theme theme'
       ;
+      justify-content: space-between;
       max-width: 1190px;
       margin: 0 auto;
-      padding: 25px 0;
+      padding: 0;
       position: relative;
     }
     .will-fixed{
       grid-area: head;
       display: flex;
       justify-content: space-between;
+      padding: 25px 0;
+      position: relative;
+    }
+    .will-fixed::before,
+    .will-fixed::after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 300vw;
+      height: 1px;
+      background-color: #ddd;
+    }
+    .will-fixed::after{
+      top: auto;
+      bottom: 0;
     }
 
     /* 헤더네비 스타일 */
     .nav{
-      display: grid;
-      grid-template-areas: 
-      'header-nav header-nav btn-modal btn-search';
-      column-gap: 20px;
+      display: flex;
     }
     .header-depth1{
       display: flex;
-      grid-area: header-nav;
+      margin-right: 20px;
     }
     .header-depth1>li{
-      margin-left: 20px;
+      margin-left: 10px;
     }
     .header-depth1>li>p{
       padding: 0 32px;
@@ -96,6 +109,8 @@
       flex-flow: row wrap;
       justify-content: space-between;
       display: none;
+      z-index: 1000;
+      background-color: white;
     }
     .header-depth2.active{
       display: flex;
@@ -113,32 +128,37 @@
       content: '';
       display: block;
       position: absolute;
-      left: 0;
+      left: -40px;
       bottom: 0;
-      right: 0;
-      height: 100px;
+      right: 40px;
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: 100%;
       z-index: 1;
+      opacity: 0.8;
     }
     .nav-title:nth-of-type(1) .nav-h2{
       position: relative;
       z-index: 2;
     }
-    .nav-title:nth-of-type(1)::before{
+    .nav-title-news::before{
       background-image: url(./assets/images/gnb-news-back.png);
+      height: 120px;
     }
-    .nav-title:nth-of-type(2)::before{
+    .nav-title-partici::before{
       background-image: url(./assets/images/gnb-partici-back.png);
+      height: 200px;
     }
-    .nav-title:nth-of-type(3)::before{
+    .nav-title-minwon::before{
       background-image: url(./assets/images/gnb-minwon-back.png);
+      height: 200px;
     }
-    .nav-title:nth-of-type(4)::before{
+    .nav-title-intro::before{
       background-image: url(./assets/images/gnb-intro-back.png);
+      height: 160px;
     }
-    .nav-title:nth-of-type(5)::before{
+    .nav-title-info::before{
       background-image: url(./assets/images/gnb-info-back.png);
+      height: 200px;
     }
     .nav-title .nav-p{
       font-size: 15px;
@@ -151,15 +171,25 @@
     .depth2-wrap{
       width: 75%;
       color: black;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
     }
     .depth2-wrap>li{
       display: flex;
       justify-content: left;
       align-items: center;
-      margin-bottom: 1px solid #d9e4ec;
+      border-bottom: 1px solid #d9e4ec;
+    }
+    .depth2-wrap>li:last-child{
+      border-bottom: none;
     }
     .depth2-wrap>li>a{
+      display: flex;
+      justify-content: left;
+      align-items: center;
       width: 30%;
+      height: 100%;
       padding: 4px 28px;
       font-size: 18px;
       position: relative;
@@ -182,9 +212,12 @@
       display: flex;
       flex-flow: row wrap;
       margin-left: 20px;
+      padding: 10px 0;
+      width: calc(70% - 20px);
+      gap: 4px;
     }
     .header-depth3 li{
-      margin-left: 20px;
+      margin-right: 20px;
     }
     .header-depth3 a{
       display: flex;
@@ -200,14 +233,12 @@
       background-color: #ddd;
     }
     #btn-modal{
-      grid-area: btn-modal;
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: pointer;
     }
     #btn-search{
-      grid-area: btn-search;
       display: none;
       justify-content: center;
       align-items: center;
@@ -223,10 +254,177 @@
     .global-nav{
       grid-area: gnav;
     }
+    .global-nav>ul{
+      display: flex;
+    }
+    .global-nav>ul li{
+      border-left: 1px solid #ddd;
+    }
+    .global-nav>ul li:last-child{
+      border-right: 1px solid #ddd;
+    }
+    .global-nav>ul a{
+      padding: 10px 15px;
+      font-weight: 300;
+      font-size: 1.1em;
+      display: block;
+    }
     .pc-utillity{
-     grid-area: pc-utill; 
+     grid-area: pc-utill;
+     display: flex;
+     align-items: center;
+    }
+    .pc-utillity ul{
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      font-weight: 400;
+      font-size: 13px;
+    }
+    .pc-utillity li{
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    .pc-utillity li::after{
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 10px;
+      position: absolute;
+      right: -32px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #ddd;
+      margin: 0 16px;
+    }
+    .pc-utillity li:last-child::after{
+      display: none;
+    }
+    .pc-utillity .header-lang-group{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .header-lang-group .imgbox{
+      width: 14px;
+      height: 14px;
+    }
+    .header-lang-group select{
+      width: 70px;
+      height: 32px;
+      background-color: white;
+      border: none;
+      color: #555;
+      appearance: none;
+      background-image: url(./assets/images/arrow_head_langbtn.png);
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-size: 7px;
+      padding-left: 6px;
+    }
+    .header-lang-group button{
+      width: 32px;
+      height: 32px;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    
+    .header .header-theme{
+      grid-area: theme;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      height: 160px;
+      position: relative;
+      z-index: 800;
+    }
+    .header-theme .theme-slogan{
+      flex: 1;
     }
 
+    .header-theme .theme-search{
+      margin: 24px;
+      max-width: 680px;
+      height: 60px;
+      position: relative;
+      z-index: 829;
+      flex: 2;
+    }
+    .header-theme .theme-search::before{
+      content: '';
+      display: block;
+      position: absolute;
+      top: -30px;
+      left: -36px;
+      z-index: 828;
+      width: 81px;
+      height: 52px;
+      background-image: url(./assets/images/search-star.png);
+      background-position: 0 0;
+      background-repeat: no-repeat;
+    }
+    .theme-search fieldset{
+      position: relative;
+      display: block;
+      overflow: visible;
+      width: 100%;
+      height: auto;
+      background-color: white;
+      border: 2px solid var(--color-text-active);
+      border-radius: 32px;
+      padding: 5px 48px 5px 16px;
+      box-shadow: 0 4px 10px rgba(12,24,58,.13);
+    }
+    .theme-search fieldset input{
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 44px;
+      background-color: white;
+      border: none;
+      padding-left: 12px;
+    }
+    .theme-search fieldset input::placeholder{
+      color: #777;
+    }
+    .theme-search fieldset a{
+      display: block;
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 40px;
+      height: 40px;
+      background-image: url(./assets/images/search-btn.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .theme-search fieldset a span{
+      font-size: 0;
+    }
+
+    .header-theme .theme-weather{
+      display: flex;
+      flex-flow: column nowrap;
+      flex: 1;
+    }
+    .header-theme .theme-weather>div{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .weather-bot .dust-info a{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     
     /* 헤더 스타일 끝 */
 
@@ -265,6 +463,15 @@
         width: 6px;
         height: 1px;
         background-color: #333;
+      }
+      #btn-modal{
+        display: none;
+      }
+      #btn-search{
+        display: none;
+      }
+      .header .header-theme{
+        display: none;
       }
     }
   </style>
@@ -574,9 +781,9 @@
           <nav class="nav"><!-- display:grid -->
             <ul class="header-depth1"><!-- display:flex -->
               <li>
-                <p class="nav-tit">인천소식</p><!-- depth1 -->
-                <ul class="header-depth2 active">
-                  <div class="nav-title"><!-- depth2 -->
+                <p class="nav-tit"><a href="#">인천소식</a></p><!-- depth1 -->
+                <ul class="header-depth2"><!-- z-index:1000 -->
+                  <div class="nav-title nav-title-news"><!-- depth2 -->
                     <p class="nav-p">시민이 행복한 인천</p>
                     <h2 class="nav-h2">인천소식</h2>
                   </div>
@@ -625,9 +832,9 @@
                 </ul>
               </li>
               <li>
-                <p class="nav-tit">시민참여</p><!-- depth1 -->
+                <p class="nav-tit"><a href="#">시민참여</a></p><!-- depth1 -->
                 <ul class="header-depth2">
-                  <div class="nav-title"><!-- depth2 -->
+                  <div class="nav-title nav-title-partici"><!-- depth2 -->
                     <p class="nav-p">시민이 행복한 인천</p>
                     <h2 class="nav-h2">시민참여</h2>
                   </div>
@@ -785,9 +992,9 @@
                 </ul>
               </li>
               <li>
-                <p class="nav-tit">민원</p><!-- depth1 -->
+                <p class="nav-tit"><a href="#">민원</a></p><!-- depth1 -->
                 <ul class="header-depth2">
-                  <div class="nav-title"><!-- depth2 -->
+                  <div class="nav-title nav-title-minwon"><!-- depth2 -->
                     <p class="nav-p">시민이 행복한 인천</p>
                     <h2 class="nav-h2">민원</h2>
                   </div>
@@ -936,9 +1143,9 @@
                 </ul>
               </li>
               <li>
-                <p class="nav-tit">인천소개</p><!-- depth1 -->
+                <p class="nav-tit"><a href="#">인천소개</a></p><!-- depth1 -->
                 <ul class="header-depth2">
-                  <div class="nav-title"><!-- depth2 -->
+                  <div class="nav-title nav-title-intro"><!-- depth2 -->
                     <p class="nav-p">시민이 행복한 인천</p>
                     <h2 class="nav-h2">인천소개</h2>
                   </div>
@@ -1085,9 +1292,9 @@
                 </ul>
               </li>
               <li>
-                <p class="nav-tit">분야별 정보</p><!-- depth1 -->
+                <p class="nav-tit"><a href="#">분야별 정보</a></p><!-- depth1 -->
                 <ul class="header-depth2">
-                  <div class="nav-title"><!-- depth2 -->
+                  <div class="nav-title nav-title-info"><!-- depth2 -->
                     <p class="nav-p">시민이 행복한 인천</p>
                     <h2 class="nav-h2">분야별 정보</h2>
                   </div>
@@ -1345,8 +1552,73 @@
             <div id="btn-search"><img src="./assets/images/ico-search.png" alt=""></div>
           </nav>
         </div>
-        <div class="global-nav"></div>
-        <div class="pc-utillity"></div>
+        <div class="global-nav">
+          <ul>
+            <li><a href="#">온라인통합예약</a></li>
+            <li><a href="#">인천데이터포털</a></li>
+            <li><a href="#">정보공개포털</a></li>
+          </ul>
+        </div>
+        <div class="pc-utillity">
+          <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+            <li>
+              <div class="header-lang-group">
+                <div class="imgbox"><img src="./assets/images/btn-lang.png" alt=""></div>
+                <label for="selectLang"></label>
+                <select name="" id="selectLang" class="">
+                  <option value>언어선택</option>
+                  <option value="/">한국어</option>
+                  <option value="/en">English</option>
+                  <option value="/jp">にほんご</option>
+                  <option value="/cn">简体中文</option>
+                </select>
+                <button type="button" title="선택언어 사이트로 이동-새창">
+                  <span>GO</span>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="header-theme"><!-- z-index:800 -->
+          <article class="art theme-slogan">
+            <div class="imgbox"><a href="./index.html"><img src="./assets/images/watchword.svg" alt="인천의 꿈, 대한민국의 미래"></a></div>
+          </article>
+          <article class="art theme-search"><!-- z-index:829 -->
+            <form action="#">
+              <fieldset>
+                <input type="text" name="" id="" placeholder="무엇을 도와드릴까요?">
+                <a href="#"><span>검색</span></a>
+              </fieldset>
+            </form>
+          </article>
+          <article class="art theme-weather">
+            <div class="weather-top">
+              <div class="indicium-icon"></div>
+              <p class="indicium-txt">한파주의보 발표</p>
+              <p class="indicium-date">2023.12.20 10:10~</p>
+            </div>
+            <div class="weather-bot">
+              <div class="weather-icon"><a href="#"><img src="./assets/images/weather_clear.png" alt=""></a></div>
+              <p class="wearher-temperature">&#45;7.3℃</p>
+              <div class="dust-info">
+                <p class="fine dust">
+                  <a href="#">
+                    <span>미세먼지</span>
+                    <span>보통</span>
+                  </a>
+                </p>
+                <p class="ultrafine dust">
+                  <a href="#">
+                    <span>초미세먼지</span>
+                    <span>보통</span>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </header>
     <main id="main" class="main"></main>
@@ -1405,6 +1677,25 @@
       fnSetActive(modal,'off');
     }
     //-------------------- 모달 제어 종료 --------------------
+
+
+    //-------------------- 헤더네비 제어 --------------------
+    let aryNavTitle=document.getElementsByClassName('nav-tit');
+    let aryheadDepth2=document.getElementsByClassName('header-depth2');
+    for(let i=0;i<aryNavTitle.length;i++){
+      aryNavTitle[i].onmouseenter=function(){
+        for(let j=0;j<aryNavTitle.length;j++){
+          fnSetActive(aryheadDepth2[j],'off');
+        }
+        fnSetActive(aryheadDepth2[i],'on');
+      }
+    }
+    for(let i=0;i<aryheadDepth2.length;i++){
+      aryheadDepth2[i].onmouseleave=function(){
+        fnSetActive(aryheadDepth2[i],'off');
+      }
+    }
+    //-------------------- 헤더네비 제어 종료 --------------------
   </script>
 </body>
 </html>
