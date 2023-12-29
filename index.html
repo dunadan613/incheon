@@ -37,7 +37,7 @@
     .none-border{
       border: none !important;
     }
-    #wrap .sec{
+    .sec{
       max-width: 1172px;
       margin: 0 auto;
     }
@@ -667,6 +667,9 @@
     .slide-footer-wrap .swiper-button-play-control img{
       height: 100%;
     }
+    .swiper-pagination-current{
+      color: #f7b02a;
+    }
 
     .mayor{
       display: flex;
@@ -900,6 +903,9 @@
       font-weight: 600;
       font-size: 40px;
     }
+    .headline .news-txt{
+      min-width: 0;
+    }
     .headline .title{
       font-weight: 600;
       font-size: 20px;
@@ -961,6 +967,134 @@
     }
     /* 메인 2 끝 */
 
+    /* 분야별 정보 시작 */
+    .sec-agroinfo{
+      background-color: #f3f8fb;
+      max-width: 100%;
+    }
+    .sec-agroinfo .container{
+      padding: 30px 0;
+    }
+    .sec-agroinfo h2{
+      font-weight: 700;
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    .sec-agroinfo ul{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .sec-agroinfo a{
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .sec-agroinfo .imgbox{
+      width: 93px;
+      height: 95px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .sec-agroinfo .imgbox img{
+      vertical-align: middle;
+    }
+    .sec-agroinfo .imgbox:hover{
+      background-color: #c3ebeb;
+    }
+    /* 분야별 정보 끝 */
+
+    /* 서브배너 시작 */
+    .sec-subbanner .container{
+      padding-top: 16px;
+    }
+    .sec-subbanner h2 .imgbox{
+      width: 198px;
+      height: 72px;
+    }
+    .swiper-sub{
+      position: relative;
+    }
+    .swiper-sub-top{
+      position: relative;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .swiper-control-sub{
+      display: flex;
+      gap: 8px;
+    }
+    .swiper-control-sub .btn-prev-sub,
+    .swiper-control-sub .btn-next-sub,
+    .swiper-control-sub .swiper-button-play-control{
+      position: static;
+      width: 40px;
+      height: 40px;
+      margin-top: 0;
+      cursor: pointer;
+    }
+    .swiper-control-sub .btn-prev-sub::after,
+    .swiper-control-sub .btn-next-sub::after{
+      display: none;
+    }
+    .swiper-sub .swiper-control-sub{
+      position: absolute;
+      bottom: 0px;
+      right: 0;
+    }
+    .swiper-wrapper-sub .swiper-slide{
+      border: 1px solid #ddd;
+      border-radius: 12px;
+    }
+    .swiper-wrapper-sub .banner-detail{
+      padding: 20px;
+    }
+    .swiper-wrapper-sub .banner-detail p{
+      overflow: hidden;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      white-space: normal;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-height: 1.3;
+    }
+    .swiper-sub a{
+      display: flex;
+      flex-flow: column nowrap;
+    }
+    .swiper-pagination-sub{
+      position: static;
+      width: 100%;
+      padding: 10px 0;
+    }
+    .swiper-pagination-sub .swiper-pagination-bullet{
+      width: 10px;
+      height: 10px;
+    }
+    /* 서브배너 끝 */
+    @media(max-width:1366px){
+      .sec-agroinfo ul{
+        flex-flow: row wrap;
+      }
+      .sec-agroinfo li{
+        width: 20%;
+        margin: 10px 0;
+      }
+      .sec-agroinfo .imgbox{
+        width: 110px;
+        height: 102px;
+        margin-bottom: 10px;
+      }
+      .sec-agroinfo .imgbox img{
+        width: 105px;
+        height: 102px;
+      }
+    }
     /* 주요서비스 두줄로 변경
        소식과 주민참여 알림 각각 100%로 넓어짐
        사이트 맵 네비 배치 3-2로 변경
@@ -991,6 +1125,12 @@
       .art-participation{
         width: 100%;
       }
+      .sec-agroinfo .container{
+        margin: 0 3vw;
+      }
+      .sec-subbanner .container{
+        margin: 0 3vw;
+      }
     }
 
 
@@ -1001,8 +1141,7 @@
        검색창은 헤더 왼쪽 로고는 가운데 이동
        헤더 아래 두칸짜리 두줄로 변경
        주요서비스 네줄로 변경
-       일일뉴스 한줄로
-       sns구역 로고-아이콘 순으로 두줄
+       
        푸터 스타일 유지 */
     @media(max-width:1025px){
       .header .container{
@@ -1159,6 +1298,11 @@
       .service-icon li{
         width: 25%;
       }
+    }
+    /* 일일뉴스 한줄로
+       sns구역 로고-아이콘 순으로 두줄 */
+    @media(max-width:768px){
+
     }
   </style>
 </head>
@@ -2783,6 +2927,187 @@
           </article>
         </div>
       </section>
+      <section class="sec sec-agroinfo">
+        <div class="container">
+          <h2>분야별 정보</h2>
+          <ul>
+            <li>
+              <a href="#">
+                <div class="imgbox"><img src="./assets/images/info01-traffic.png" alt=""></div>
+                <p>교통·도로</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="imgbox"><img src="./assets/images/info02-ocean.png" alt=""></div>
+                <p>농업·수산·해양</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="imgbox"><img src="./assets/images/info03-culture.png" alt=""></div>
+                <p>문화·관광</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="imgbox"><img src="./assets/images/info04-build.png" alt=""></div>
+                <p>도시·주택·토지</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="imgbox"><img src="./assets/images/info05-eco.png" alt=""></div>
+                <p>경제·투자</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="imgbox"><img src="./assets/images/info06-health.png" alt=""></div>
+                <p>건강·식품·체육</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="imgbox"><img src="./assets/images/info07-welfare.png" alt=""></div>
+                <p>복지</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="imgbox"><img src="./assets/images/info08-safe.png" alt=""></div>
+                <p>재난·안전</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="imgbox"><img src="./assets/images/info09-env.png" alt=""></div>
+                <p>환경</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="imgbox"><img src="./assets/images/info10-pub.png" alt=""></div>
+                <p>행정·세무·법무</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="sec sec-subbanner">
+        <div class="container">
+          <div class="swiper swiper-sub">
+            <div class="swiper-sub-top">
+              <h2>
+                <span class="none">서브배너</span>
+                <div class="imgbox"><img src="./assets/images/city-title.png" alt=""></div>
+              </h2>
+              <div class="swiper-control-sub">
+                <div class="swiper-button-prev btn-prev-sub">
+                  <img src="./assets/images/slider-arrow-left.png" alt="">
+                </div>
+                <div class="swiper-button-play-control">
+                  <img src="./assets/images/slider-control-stop.png" alt="멈춤버튼">
+                </div>
+                <div class="swiper-button-next btn-next-sub">
+                  <img src="./assets/images/slider-arrow-right.png" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="swiper-wrapper swiper-wrapper-sub">
+              <div class="swiper-slide">
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/notice-slide01.jpg" alt=""></div>
+                  <div class="banner-detail">
+                    <h3 class="primis">경제·투자</h3>
+                    <p>
+                      인천사랑상품권(이음카드) 사용 변경 안내연 매출액 30억원 초과 가맹점 캐시백 미지급('23. 9월 25일부터)【기본 캐시백】연 매출 30억원 초과 가맹점 이용 시0%※ 상생가맹점 이용 시, 2% 상생캐시백【대상】4,112개소('23.10월 기준, 대상 가맹점 목록은 붙임 파일 참고)보유 한도 변경('23. 9월 25일부터)【개인별】200만원 이하 → 150만원 이하한시적 캐시백 상향('23. 10월부터 12월 31일까지)
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/notice-slide02.jpg" alt=""></div>
+                  <div class="banner-detail">
+                    <h3 class="secundo">재난·안전</h3>
+                    <p>
+                      최근 국내에서 테러단체에 동조하는 혐의로 적발되는 사례가 꾸준히 증가하고 있으며, 해외에서도 혐오 테러가 지속 발생하는 등 우리 국민 대상 테러 위협이 증가하고 있습니다. 드론을 활용하거나, 차량 돌진, 우편물이나 택배를 이용하는 등 새로운 유형의 테러도 우리 주변에서 언제든 발생할 수 있습니다.테러는 국적도, 인종도, 지역도 가리지 않습니다.
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/notice-slide03.jpg" alt=""></div>
+                  <div class="banner-detail">
+                    <h3 class="tertius">복지</h3>
+                    <p>
+                      시행일 : 2023.7.1.이후 시술(시술지원결정통지서)확대내용지원대상 : 모든 난임부부 ※ 인천형(기준중위소득180%초과)은 신청일 기준 최근 6개월이상 인천시에 주민등록을 두고 실제 거주지원내용 : 총 21회(신선9회, 동결7회, 인공5회) 시술비 지원
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/notice-slide04.jpg" alt=""></div>
+                  <div class="banner-detail">
+                    <h3 class="quartus">도시·주택·토지</h3>
+                    <p>
+                      인천시에서는 (반)지하주택 거주자에 대하여 개폐식 방범창 설치 지원사업을 아래와 같이 실시하오니, 많은 신청 바랍니다.대 상: 반지하주택에 거주하는 인천 시민지원내용: 개폐식 방범창 무료설치(교체)신청기간: 2023. 5. 10.~ 예산 소진 시까지신청방법 : 1)방문신청(관할구청 건축과), 2)우편신청(관할구청 건축과)
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/notice-slide05.jpg" alt=""></div>
+                  <div class="banner-detail">
+                    <h3 class="primis">도시·주택·토지</h3>
+                    <p>
+                      미납 지방세 등의 열람제도 안내 - 전세사기 피해 급증에 따라 임차인의 미납지방세 열람권 확대 주요내용 표정보 열람 람 기 간 ① 계약일 이전 + ② 계약일 ~ 임대차개시일 임대인 동의 ① 계약일 이전 필 요 ② 계약일 ~ 임대차개시일 불 요* 신 청 기 관 전국 자치단체 열 람 범 위 전국 자치단체 지방세 미납액 열람사실 통지 임차인 열람 시 임대인에게 통지
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/notice-slide06.jpg" alt=""></div>
+                  <div class="banner-detail">
+                    <h3 class="secundo">경제·투자</h3>
+                    <p>
+                      모집기간 : 연중지원내용 : 취업지원서비스, 구직촉진수당, 취업활동비용, 조기취업성공수당, 취업성공수당 등문 의 : 고용노동부 고객상담센터 1350 지역별 담당 고용센터중구, 동구, 미추홀구, 연수구, 남동구, 옹진군 : 인천고용센터(남동구 문화로 131, 3층)계양구, 부평구 : 인천북부고용센터(계양구 장제로 804, 2층)서 구 : 인천서부고용센터(서구 이음1로 389, 6층)강화군 : 강화고용복지센터(강화읍 강화대로 395, 5층)
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/notice-slide07.jpg" alt=""></div>
+                  <div class="banner-detail">
+                    <h3 class="tertius">건강·식품·체육</h3>
+                    <p>
+                      인천시민의 심리지원을 위한 「마음건강 심리지원 안내문」을 붙임과 같이 안내하오니 마음건강을 점검하고 회복에 도움이 되기를 바랍니다.지원기간 : 연중지원대상 : 인천시민지원내용 : 마음건강검사, 심층상담, 종합심리검사 및 전문상담, 필요시 정신의료기관 외래진료비 지원 등
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/notice-slide08.jpg" alt=""></div>
+                  <div class="banner-detail">
+                    <h3 class="quartus">도시·주택·토지</h3>
+                    <p>
+                      인천광역시 전세피해 지원센터 맞춤형 상담 위치 : 인천 부평구 열우물로 90 더샵부평센트럴시티 상가A동 305호 (검색: 인천광역주거복지센터)개소일자 : 2023. 3. 06. 상담 운영시간 : 평일 10:00~17:00 (토, 일 휴무)대표번호 : 1533-8119
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-sub"></div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer id="footer" class="footer"></footer>
   </section>
@@ -2823,6 +3148,11 @@
       pagination: {
         el: '.swiper-pagination',
         type:'fraction',
+        renderFraction: function (currentClass, totalClass) {
+          return '<span class="' + currentClass + '"></span>' +
+          ' - ' +
+          '<span class="' + totalClass + '"></span>';
+        }
       },
       // Navigation arrows
       navigation: {
@@ -2834,6 +3164,7 @@
         el: '.swiper-scrollbar',
       },
     });
+
     const swiper2 = new Swiper('.swiper-participation', {
       // Optional parameters
       direction: 'horizontal',
@@ -2844,6 +3175,11 @@
       pagination: {
         el: '.swiper-pagination-2',
         type:'fraction',
+        renderFraction: function (currentClass, totalClass) {
+          return '<span class="' + currentClass + '"></span>' +
+          ' - ' +
+          '<span class="' + totalClass + '"></span>';
+        }
       },
       // Navigation arrows
       navigation: {
@@ -2855,7 +3191,31 @@
         el: '.swiper-scrollbar',
       },
     });
-    // swiper.nextEl=document.querySelector('.button-right');
+
+    const swiperSub = new Swiper('.swiper-sub', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: false,
+      mousewheel:false,
+      autoplay:true,
+      spaceBetween:'16px',
+      slidesPerView:3,
+      breakpoints:{
+        1025:{
+          slidesPerView:4,
+        },
+      },
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination-sub',
+        type:'bullets',
+      },
+      // Navigation arrows
+      navigation: {
+        nextEl: '.btn-next-sub',
+        prevEl: '.btn-prev-sub',
+      },
+    });
     //-------------------- swiper --------------------
 
 
