@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="./assets/css/font_Noto_Sans_KR(no_italic).css">
   <link rel="stylesheet" href="./assets/css/skip_menu.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="./assets/css/modal.css">
   <style>
     :root{
@@ -29,7 +29,6 @@
     #wrap{
       overflow: hidden;
       margin: 0 auto;
-      height: 3000px;
     }
     .container{
       max-width: 1190px;
@@ -37,6 +36,17 @@
     }
     .none-border{
       border: none !important;
+    }
+    #wrap .sec{
+      max-width: 1172px;
+      margin: 0 auto;
+    }
+    .linkhtml{
+      padding-right: 19px;
+      background-image: url(./assets/images/icon-linkHttp.png);
+      background-size: 10px 10px;
+      background-repeat: no-repeat;
+      background-position: 100% 50%;
     }
     /* 헤더 스타일 */
     .header .container{
@@ -102,13 +112,6 @@
       font-size: 18px;
       text-align: center;
       padding: 0 30px;
-    }
-    .header-depth1 span.linkhtml{
-      padding-right: 19px;
-      background-image: url(./assets/images/icon-linkHttp.png);
-      background-size: 10px 10px;
-      background-repeat: no-repeat;
-      background-position: 100% 50%;
     }
     .header-depth2{
       position: absolute;
@@ -563,6 +566,401 @@
     /* 헤더 스타일 끝 */
 
 
+    /* 메인 위 */
+    .sec-promotion .container{
+      display: flex;
+      justify-content: space-between;
+    }
+    .promotion-slider{
+      width: calc(50% - 20px);
+      position: relative;
+    }
+    .swiper-main{
+      position: relative;
+      border-radius: 16px;
+      border:1px solid #e2e8fc;
+    }
+    .main-slider>.swiper-button-prev,
+    .main-slider>.swiper-button-next{
+      width: 48px;
+      height: 48px;
+    }
+    .main-slider>.swiper-button-prev{
+      left: -24px;
+    }
+    .main-slider>.swiper-button-next{
+      right: -24px;
+    }
+    .main-slider>.swiper-button-prev button,
+    .main-slider>.swiper-button-next button{
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      cursor: pointer;
+    }
+    .main-slider>.swiper-button-prev button{
+      background-image: url(./assets/images/slider-arrow-left.png);
+    }
+    .main-slider>.swiper-button-next button{
+      background-image: url(./assets/images/slider-arrow-right.png);
+    }
+    .main-slider>.swiper-button-prev::after,
+    .main-slider>.swiper-button-next::after{
+      display: none;
+    }
+    .main-slider .slide-footer-wrap{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(45,53,72,.9);
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 16px;
+    }
+    .main-slider .slide-view-all{
+      padding-left: 21px;
+      background-image: url(./assets/images/slider-nav-viewall.png);
+      background-position: left;
+      background-repeat: no-repeat;
+      background-size: 13px 13px;
+      background-color: transparent;
+      color: white;
+      border: none;
+      outline: none;
+    }
+    .main-slider .slide-control{
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+    .slide-footer-wrap .swiper-pagination,
+    .slide-footer-wrap .swiper-button-prev,
+    .slide-footer-wrap .swiper-button-next{
+      position: static;
+      color: white;
+    }
+    .slide-footer-wrap .swiper-button-prev,
+    .slide-footer-wrap .swiper-button-next,
+    .slide-footer-wrap .swiper-button-play-control{
+      width: 20px;
+      height: 20px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-top: 0;
+    }
+    .slide-footer-wrap .swiper-button-prev{
+      background-image: url(./assets/images/slider-nav-prev.png);
+    }
+    .slide-footer-wrap .swiper-button-next{
+      background-image: url(./assets/images/slider-nav-next.png);
+    }
+    .slide-footer-wrap .swiper-button-prev::after,
+    .slide-footer-wrap .swiper-button-next::after{
+      display: none;
+    }
+    .slide-footer-wrap .swiper-button-play-control img{
+      height: 100%;
+    }
+
+    .mayor{
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      width: calc(50% - 20px);
+    }
+    .mayor .imgbox{
+      box-shadow: 0 0.25rem 0.25rem rgba(12,24,58,.13);
+      border: 1px solid #e2e8fc;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .mayor .mayor-shortcut{
+      background-color: #e5667e;
+      border-radius: 16px;
+      color: white;
+    }
+    .mayor .mayor-shortcut ul{
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 14px;
+    }
+    .mayor .mayor-shortcut li{
+      text-align: center;
+      position: relative;
+    }
+    .mayor .mayor-shortcut li::after{
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      right: -8px;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 24px;
+      background-color: rgba(255,255,255,.4);
+    }
+    .mayor .mayor-shortcut li:last-child:after{
+      display: none;
+    }
+    .mayor-shortcut li a{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+    }
+    .mayor-shortcut li a::before,
+    .mayor-shortcut li a::after{
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-repeat: no-repeat;
+    }
+    .mayor-shortcut li a::before{
+      background-position: left center;
+    }
+    .mayor-shortcut li a.mayor-room::before{
+      background-image: url(./assets/images/link-mayoroffice.png);
+    }
+    .mayor-shortcut li a.mayor-menifesto::before{
+      background-image: url(./assets/images/link-manifesto.png);
+    }
+    .mayor-shortcut li a.mayor-message::before{
+      background-image: url(./assets/images/link-message.png);
+    }
+    .mayor-shortcut li a::after{
+      background-position: right center;
+      background-image: url(./assets/images/arrow_forward.png);
+    }
+    /* 메인 위 끝 */
+
+
+    /* 주요서비스 */
+    .sec-main-service .container{
+      padding: 45px 15px;
+    }
+    .sec-main-service h2{
+      font-weight: 700;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+    .service-icon ul{
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .service-icon a{
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+    }
+    .service-icon a:hover{
+      transform: translateY(-10px);
+    }
+    .service-icon .imgbox{
+      width: 69px;
+      height: 68px;
+    }
+    .service-icon .imgbox img{
+      width: 69px;
+      height: 68px;
+    }
+    /* 주요서비스 끝 */
+
+    /* 단어 시작 */
+    .sec-keyword .container{
+      padding: 30px 0;
+      background-color: #f7f7f7;
+      background-image: url(./assets/images/hotkeyword-back.png);
+      background-position: right bottom;
+      background-repeat: no-repeat;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .sec-keyword .word-wrap{
+      display: flex;
+      gap: 10px;
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+    .word-wrap a{
+      border: 1px solid #e9e9e9;
+      border-radius: 40px;
+      padding: 4px 16px;
+      background-color: white;
+      font-size: 18px;
+    }
+    /* 단어 끝 */
+
+    /* 메인 2 시작 */
+    .sec-inform .container{
+      display: flex;
+      justify-content: space-between;
+      padding: 50px 0;
+      gap: 40px;
+    }
+    .art-announcement{
+      width: calc(55% - 20px);
+    }
+    .news-nav{
+      display: flex;
+      justify-content: space-between;
+    }
+    .news-nav a.btn{
+      width: 40px;
+      height: 40px;
+      background-image: url(./assets/images/btn-view-more.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 40px auto;
+    }
+    .news-nav ul{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding-right: 10px;
+    }
+    .news-nav ul li{
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 18px;
+    }
+    .news-nav ul li.active{
+      color: #005385;
+      position: relative;
+    }
+    .news-nav ul li::after,
+    .news-nav ul li::before{
+      content: '';
+      display: none;
+      position: absolute;
+      background-color: #005385;
+    }
+    .news-nav ul li::after{
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 1px;
+    }
+    .news-nav ul li::before{
+      left: 50%;
+      top: -10px;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .news-nav ul li.active::after,
+    .news-nav ul li.active::before{
+      display: block;
+    }
+    .news-detail{
+      margin-top: 10px;
+    }
+    .news-detail .art{
+      display: none;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .news-detail .art.active{
+      display: block;
+    }
+    .news-detail .headline{
+      display: flex;
+      justify-content: flex-start;
+      gap: 16px;
+      border-bottom: 1px dashed #ddd;
+      padding-bottom: 16px;
+    }
+    .headline .news-date{
+      text-align: center;
+      background-color: #f4f4f4;
+      border-radius: 18px;
+      padding: 16px 20px;
+      line-height: 1.1;
+    }
+    .news-date .year{
+      font-size: 14px;
+    }
+    .news-date .day{
+      font-weight: 600;
+      font-size: 40px;
+    }
+    .headline .title{
+      font-weight: 600;
+      font-size: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .headline .paragraph{
+      overflow: hidden;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      white-space: normal;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-height: 1.3;
+      font-size: 18px;
+    }
+    .record{
+      padding: 8px 0;
+      color: #555;
+    }
+    .record p a{
+      display: flex;
+      justify-content: space-between;
+      padding: 3px 0 3px 8px;
+      position: relative;
+      gap: 10px;
+    }
+    .record a::before{
+      content: '';
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 4px;
+      background-color: #ddd;
+    }
+    .record a span{
+      white-space: nowrap;
+    }
+    .record a span:first-child{
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .record a span:last-child{
+      font-size: 15px;
+    }
+    .art-participation{
+      width: calc(45% - 20px);
+    }
+    .art-participation h2{
+      font-weight: 700;
+      font-size: 24px;
+    }
+    .participation-slider{
+      position: relative;
+    }
+    /* 메인 2 끝 */
+
     /* 주요서비스 두줄로 변경
        소식과 주민참여 알림 각각 100%로 넓어짐
        사이트 맵 네비 배치 3-2로 변경
@@ -570,6 +968,28 @@
     @media(max-width:1180px){
       .header .container{
         padding: 0 3vh;
+      }
+      .service-icon ul{
+        flex-wrap: wrap;
+      }
+      .service-icon li{
+        width: 16.666667%;
+        margin-bottom: 25px;
+      }
+      .sec-inform .container{
+        margin: 0 3vw;
+        width: auto;
+        flex-flow: row wrap;
+      }
+      .art-announcement{
+        width: 100%;
+      }
+      .news-nav ul{
+        justify-content: flex-start;
+        gap: 30px;
+      }
+      .art-participation{
+        width: 100%;
       }
     }
 
@@ -716,6 +1136,28 @@
       }
       .header .header-theme{
         display: none;
+      }
+      .sec-promotion{
+        flex-flow: row wrap;
+        padding: 20px 30px 0;
+        gap: 25px;
+      }
+      .promotion-slider{
+        width: 100%;
+      }
+      .mayor{
+        width: 100%;
+        gap: 15px;
+      }
+      .mayor .mayor-shortcut ul{
+        justify-content: space-around;
+        font-size: 20px;
+      }
+      .mayor .mayor-shortcut li::after{
+        right: -60px;
+      }
+      .service-icon li{
+        width: 25%;
       }
     }
   </style>
@@ -1887,16 +2329,464 @@
 
     <main id="main" class="main">
       <section class="sec sec-promotion">
-        <h2 class="none">시정 홍보</h2>
-        <article class="art">
-          <div class="swiper"></div>
-        </article>
-        <article class="art"></article>
+        <div class="container">
+          <h2 class="none">시정 홍보</h2>
+          <article class="art promotion-slider main-slider">
+            <div class="swiper swiper-promotion swiper-main">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="#"><img src="./assets/images/promotion-slide01.jpg" alt="미세먼지 계절관리제"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./assets/images/promotion-slide02.jpg" alt="아암대로 차로축소"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./assets/images/promotion-slide03.jpg" alt="성실납세자 선정"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./assets/images/promotion-slide04.jpg" alt="에이즈 켐페인"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./assets/images/promotion-slide05.jpg" alt="5등급 차량 운행제한"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./assets/images/promotion-slide06.jpg" alt="안심귀가길"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./assets/images/promotion-slide07.jpg" alt="해사전문법원 유치"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./assets/images/promotion-slide08.jpg" alt="코로나19 예방접종"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./assets/images/promotion-slide09.jpg" alt="수산물 검역"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./assets/images/promotion-slide10.jpg" alt="전세보증금 보험료 지원"></a></div>
+              </div>
+            </div>
+
+            <div class="slide-footer-wrap">
+              <button class="slide-view-all">전체보기</button>
+              <div class="slide-control">
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev btn-prev"></div>
+                <div class="swiper-button-play-control" style="width: 25px;">
+                  <img src="./assets/images/slider-nav-stop.png" alt="멈춤버튼">
+                </div>
+                <div class="swiper-button-next btn-next"></div>
+              </div>
+            </div>
+
+            <div class="swiper-button-prev btn-prev">
+              <button class="button-left"><span class="none">전</span></button>
+            </div>
+            <div class="swiper-button-next btn-next">
+              <button class="button-right"><span class="none">후</span></button>
+            </div>
+          </article>
+
+          <article class="art mayor">
+            <div class="imgbox"><img src="./assets/images/mayor-banner-image.png" alt=""></div>
+            <div class="mayor-shortcut">
+              <ul>
+                <li>
+                  <a href="#" class="mayor-room">
+                    <span>시민 시장실</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="mayor-menifesto">
+                    <span>공약(메니페스토)</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="mayor-message">
+                    <span>시장메세지</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="sec sec-main-service">
+        <div class="container">
+          <h2>주요 서비스</h2>
+          <article class="service-icon">
+            <ul>
+              <li>
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/service01-tour.png" alt=""></div>
+                  <p>인천관광</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/service02-job.png" alt=""></div>
+                  <p>일자리포털</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/service03-organization.png" alt=""></div>
+                  <p>조직도</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/service04-comunication.png" alt=""></div>
+                  <p>소통이 가득</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/service05-minwon.png" alt=""></div>
+                  <p>민원신청</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/service06-smartcity.png" alt=""></div>
+                  <p>스마트도시<br>인천</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/service07-youth.png" alt=""></div>
+                  <p>청년포털</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/service08-water.png" alt=""></div>
+                  <p>우리집 수돗물</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/service09-tax.png" alt=""></div>
+                  <p>지방세<br>납부</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/service10-digitalcityhall.png" alt=""></div>
+                  <p>디지털시청</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/service11-icbenefit.png" alt=""></div>
+                  <p>맞춤형<br>수혜서비스</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="imgbox"><img src="./assets/images/service12-budget.png" alt=""></div>
+                  <p>예산</p>
+                </a>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section class="sec sec-keyword">
+        <div class="container">
+          <div class="word-wrap">
+            <a href="#">#이달의 문화행사</a>
+            <a href="#">#한파대비 행동요령</a>
+            <a href="#">#공항철도~서울9호선 직결</a>
+            <a href="#">#빈대 예방하기</a>
+            <a href="#">#행정체제 개편 분구통합</a>
+          </div>
+        </div>
+      </section>
+      <section class="sec sec-inform">
+        <div class="container">
+          <article class="art art-announcement">
+            <h2 class="none">각종소식</h2>
+            <div class="news-nav">
+              <ul>
+                <li class="trigger active"><span>새소식</span></li>
+                <li class="trigger"><span>고시공고</span></li>
+                <li class="trigger"><span>채용·시험공고</span></li>
+                <li class="trigger"><span>보도자료</span></li>
+                <li class="trigger"><span>설명자료</span></li>
+                <li><a href="#"><span class="linkhtml">문화행사</span></a></li>
+              </ul>
+              <a href="#" class="btn"><span class="none">더보기</span></a>
+            </div>
+            <div class="news-detail">
+              <article class="art art-news active">
+                <div class="headline">
+                  <div class="news-date">
+                    <p class="year">2023.12</p>
+                    <p class="day">28</p>
+                  </div>
+                  <div class="news-txt">
+                    <p class="title">
+                      <a href="#">2023년 인천광역시 사회조사 결과 공표</a>
+                    </p>
+                    <p class="paragraph">
+                      <a href="#">시민의 삶의 질 등 시민과 지역사회의 상태를 종합적·체계적으로 파악하여 각종 정책수립 및 연구의 기초자료로 활용하기 위해 실시한 「2023년 인천광역시 사회조사」 결과를 '인천데이터포털'에 공표하오니 참고하시기 바랍니다.</a>
+                    </p>
+                  </div>
+                </div>
+                <article class="record">
+                  <p>
+                    <a href="#">
+                      <span>초미세먼지 위기경보 관심단계 발령에 따른 고농도 미세먼지 대응요령 안내</span>
+                      <span>2023-12-28</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>초미세먼지 위기경보 '관심'단계 발령에 따른 비상저감조치 시행 안내</span>
+                      <span>2023-12-27</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>전국 고병원성 조류인플루엔자 발생현황(11~20차 발생) 알림</span>
+                      <span>2023-12-23</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>시 주간행사계획(12.25.~12.31.)</span>
+                      <span>2023-12-22</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>빈대정보집 제2-2판</span>
+                      <span>2023-12-22</span>
+                    </a>
+                  </p>
+                </article>
+              </article>
+              <article class="art art-nuntius">
+                <div class="headline">
+                  <div class="news-date">
+                    <p class="year">2023.12</p>
+                    <p class="day">28</p>
+                  </div>
+                  <div class="news-txt">
+                    <p class="title">
+                      <a href="#">
+                        2024년 등록사립박물관 활성화 지원사업 공모
+                      </a>
+                    </p>
+                    <p class="paragraph">
+                      <a href="#">
+                        2024년 등록사립박물관 활성화 지원사업 공모
+                        &#10061; 2024년 등록사립박물관 활성화 지원사업 공고 : 2023. 12. 28.(목)
+                        &#10061; 사업설명회 개최  : 2024. 1. 17.(수)
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <article class="record">
+                  <p>
+                    <a href="#">
+                      <span>인천검단지구 스마트도시 건설사업 실시계획 변경(2차)</span>
+                      <span>2023-12-28</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>성매매 피해아동청소년지원센터 사업 수행기관 선정결과 공고</span>
+                      <span>2023-12-28</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>공공건축 통합관리 운영시스템 명칭 공모 공모</span>
+                      <span>2023-12-28</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>중소기업협동조합 휴면조합 지정 공고</span>
+                      <span>2023-12-28</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>경제자유구역청 기간제근로자 채용(청소, 기계) 재공고</span>
+                      <span>2023-12-28</span>
+                    </a>
+                  </p>
+                </article>
+              </article>
+              <article class="art art-hire">
+                <div class="headline">
+                  <div class="news-date">
+                    <p class="year">2023.12</p>
+                    <p class="day">22</p>
+                  </div>
+                  <div class="news-txt">
+                    <p class="title">
+                      <a href="#">2023년도 인천광역시 청원경찰 채용시험 최종 합격자 결정 공고</a>
+                      
+                    </p>
+                    <p class="paragraph">
+                      <a href="#">인천광역시 공고 제2023-2899호- 2023년도 인천광역시 청원경찰 채용시험 -최종 합격자 결정 공고2023년도 인천광역시 청원경찰 채용시험 최종합격자를 다음과 같이 결정 공고합니다.2023년 12월 22일인천광역시장</a>
+                    </p>
+                  </div>
+                </div>
+                <article class="record">
+                  <p>
+                    <a href="#">
+                      <span>2023년 제3회 인천광역시의회 지방임기제공무원 채용시험 최종합격자 결정 공고(정책지원관)</span>
+                      <span>2023-12-22</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>2023년 제16회 인천광역시 임기제공무원 채용시험 시행계획 공고</span>
+                      <span>2023-12-19</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>2023년 제4회 인천광역시 개방형직위(미디어담당관, 정무조정담당관) 형식요건심사 합격자 결정 및 적격성(면접) 심사 시행계획 공고</span>
+                      <span>2023-12-28</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>2023년도 하반기 수렵면허시험 합격자 공고</span>
+                      <span>2023-07-18</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>2023년도 하반기 수렵면허시험 장소 및 응시자 준수사항 공고</span>
+                      <span>2023-06-29</span>
+                    </a>
+                  </p>
+                </article>
+              </article>
+              <article class="art art-newsdata">
+                <div class="headline">
+                  <div class="news-date">
+                    <p class="year">2023.12</p>
+                    <p class="day">28</p>
+                  </div>
+                  <div class="news-txt">
+                    <p class="title">
+                      <a href="#">2024년 인천시 재난 안전 정책, 시민 체감형으로 추진</a>
+                    </p>
+                    <p class="paragraph">
+                      <a href="#">고화질·지능형 CCTV 보급 확대로 스마트한 재난·범죄 예방·관리</a>
+                    </p>
+                  </div>
+                </div>
+                <article class="record">
+                  <p>
+                    <a href="#">
+                      <span>인천시와 해사법원 인천유치 범시민운동본부, 법제사법위 방문해 해사전문법원 인천 유치 강력 건의</span>
+                      <span>2023-12-28</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>인천시, 유관기관과 건축정책 공유하고 협력 논의</span>
+                      <span>2023-12-28</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>인천경제청, 청라의료복합타운 토지매매계약 체결</span>
+                      <span>2023-12-28</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>인천 대학생·청년 4명, 2023년 대한민국 인재상 수상</span>
+                      <span>2023-12-28</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>인천시, 복지재정 투명한 운영 위해 시설 종사자 교육</span>
+                      <span>2023-12-28</span>
+                    </a>
+                  </p>
+                </article>
+              </article>
+              <article class="art art-explicatio">
+                <div class="headline">
+                  <div class="news-date">
+                    <p class="year">2023.11</p>
+                    <p class="day">28</p>
+                  </div>
+                  <div class="news-txt">
+                    <p class="title">
+                      <a href="#">인천시 전세피해 지원사업에 대한 설명자료</a>
+                    </p>
+                    <p class="paragraph">
+                      <a href="#">12월 7일 시장님 면담확정, 市 지원사업 지속 추진</a>
+                    </p>
+                  </div>
+                </div>
+                <article class="record">
+                  <p>
+                    <a href="#">
+                      <span>2024년 인천시 군․구교부금‘삭감’에 대한 설명자료</span>
+                      <span>2023-11-23</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>루원시티 도시개발사업 국정감사 요구관련 설명자료</span>
+                      <span>2023-10-17</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>JTBC 청라 영상·문화 복합단지 보도 관련 설명자료</span>
+                      <span>2023-10-06</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>시민단체의 북부권종합발전계획 중단 요구 관련 설명자료</span>
+                      <span>2023-09-24</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#">
+                      <span>검암역세권 송전탑 지중화 사업 관련</span>
+                      <span>2023-09-21</span>
+                    </a>
+                  </p>
+                </article>
+              </article>
+            </div>
+          </article>
+          <article class="art art-participation participation-slider main-slider">
+            <h2>시민참여 알림</h2>
+            <div class="swiper swiper-participation swiper-main">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="#"><img src="./assets/images/partici-slide01.jpg" alt="미세먼지 계절관리제"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./assets/images/partici-slide02.jpg" alt="아암대로 차로축소"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./assets/images/partici-slide03.jpg" alt="성실납세자 선정"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./assets/images/partici-slide04.jpg" alt="에이즈 켐페인"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./assets/images/partici-slide05.jpg" alt="5등급 차량 운행제한"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./assets/images/partici-slide06.jpg" alt="안심귀가길"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./assets/images/partici-slide07.jpg" alt="해사전문법원 유치"></a></div>
+              </div>
+            </div>
+  
+            <div class="slide-footer-wrap">
+              <button class="slide-view-all">시민참여 전체보기</button>
+              <div class="slide-control">
+                <div class="swiper-pagination-2"></div>
+                <div class="swiper-button-prev btn-prev-2"></div>
+                <div class="swiper-button-play-control" style="width: 25px;">
+                  <img src="./assets/images/slider-nav-stop.png" alt="멈춤버튼">
+                </div>
+                <div class="swiper-button-next btn-next-2"></div>
+              </div>
+            </div>
+  
+            <div class="swiper-button-prev btn-prev-2">
+              <button class="button-left"><span class="none">전</span></button>
+            </div>
+            <div class="swiper-button-next btn-next-2">
+              <button class="button-right"><span class="none">후</span></button>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
     <footer id="footer" class="footer"></footer>
   </section>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./assets/js/swiper-bundle.min.js"></script>
   <script>
     //-------------------- 함수구역 --------------------
     function fnSetActive(el,opt){
@@ -1923,24 +2813,49 @@
 
 
     //-------------------- swiper --------------------
-    const swiper = new Swiper('.swiper', {
+    const swiper1 = new Swiper('.swiper-promotion', {
       // Optional parameters
-      direction: 'vertical',
+      direction: 'horizontal',
       loop: true,
+      mousewheel:false,
+      autoplay:true,
       // If we need pagination
       pagination: {
         el: '.swiper-pagination',
+        type:'fraction',
       },
       // Navigation arrows
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.btn-next',
+        prevEl: '.btn-prev',
       },
       // And if we need scrollbar
       scrollbar: {
         el: '.swiper-scrollbar',
       },
     });
+    const swiper2 = new Swiper('.swiper-participation', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+      mousewheel:false,
+      autoplay:true,
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination-2',
+        type:'fraction',
+      },
+      // Navigation arrows
+      navigation: {
+        nextEl: '.btn-next-2',
+        prevEl: '.btn-prev-2',
+      },
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
+    // swiper.nextEl=document.querySelector('.button-right');
     //-------------------- swiper --------------------
 
 
@@ -2080,6 +2995,22 @@
 
     }
     //-------------------- 헤더네비 제어 종료 --------------------
+
+
+    //-------------------- 게시판 제어 --------------------
+    let triggerNews=document.getElementsByClassName('trigger');
+    let newsSection=document.getElementsByClassName('news-detail')[0].children;
+    for(let i=0;i<triggerNews.length;i++){
+      triggerNews[i].onclick=function(){
+        for(let j=0;j<triggerNews.length;j++){
+          fnSetActive(triggerNews[j],'off');
+          fnSetActive(newsSection[j],'off');
+        }
+        fnSetActive(triggerNews[i],'on');
+        fnSetActive(newsSection[i],'on');
+      }
+    }
+    //-------------------- 게시판 제어 종료 --------------------
   </script>
 </body>
 </html>
