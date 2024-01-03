@@ -2325,17 +2325,14 @@
       sitemapTit[i].onclick=function(){
         if(sitemapData[i].classList.contains('flag-open')){
           sitemapTit[i].classList.remove('flag-open');
-          fnSetDisplay(sitemapData[i],'none');
           sitemapData[i].classList.remove('flag-open');
         }
         else{
           for(let j=0;j<sitemapTit.length;j++){
             sitemapTit[j].classList.remove('flag-open');
-            fnSetDisplay(sitemapData[j],'none');
             sitemapData[j].classList.remove('flag-open');
           }
           sitemapTit[i].classList.add('flag-open');
-          fnSetDisplay(sitemapData[i],'block');
           sitemapData[i].classList.add('flag-open');
         }
       }
