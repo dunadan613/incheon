@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta property="og:url" content="https://dunadan613.github.io/incheon/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="When Great Minds Don’t Think Alike"/>
+  <meta property="og:description" content="How much does culture influence creative thinking?"/>
+  <meta property="og:image" content="https://dunadan613.github.io/incheon/preview.jpg"/>
+  <title>홈|인천광역시 대표</title>
   <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="./assets/css/font_Noto_Sans_KR(no_italic).css">
@@ -69,8 +74,8 @@
       grid-area: head;
       display: flex;
       justify-content: space-between;
-      padding: 25px 0;
       position: relative;
+      background-color: white;
     }
     .will-fixed::before,
     .will-fixed::after{
@@ -86,6 +91,14 @@
     .will-fixed::after{
       top: auto;
       bottom: 0;
+    }
+    .fixed-box-wrap{
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      padding: 25px 0;
+      width: 100%;
+      max-width: 1190px;
     }
     .will-fixed h1{
       display: flex;
@@ -359,7 +372,7 @@
     .global-nav>ul a{
       padding: 10px 15px;
       font-weight: 300;
-      font-size: 1.1em;
+      font-size: 16.5px;
       display: block;
     }
     .pc-utillity{
@@ -438,8 +451,9 @@
       position: relative;
       z-index: 800;
     }
-    .header-theme .theme-slogan{
-      flex: 1;
+    .header-theme .theme-slogan img{
+      width: auto;
+      height: 43px;
     }
 
     .header-theme .theme-search{
@@ -448,7 +462,7 @@
       height: 60px;
       position: relative;
       z-index: 829;
-      flex: 1.5;
+      flex: 2;
       font-size: 18px;
     }
     .header-theme .theme-search::before{
@@ -508,7 +522,7 @@
       display: flex;
       flex-flow: column nowrap;
       flex: 1;
-      gap: 12px;
+      gap: 8px;
     }
     .theme-weather .weather-top{
       display: flex;
@@ -574,27 +588,35 @@
     .promotion-slider{
       width: calc(50% - 20px);
       position: relative;
+      box-shadow: 0 4px 4px rgba(12,24,58,.13);
+      border-radius: 16px;
     }
     .swiper-main{
       position: relative;
       border-radius: 16px;
       border:1px solid #e2e8fc;
+      box-shadow: 0 4px 4px rgba(12,24,58,.13);
     }
     .main-slider>.swiper-button-prev,
     .main-slider>.swiper-button-next{
-      width: 48px;
-      height: 48px;
+      width: 60px;
+      height: 60px;
+    }
+    .main-slider>.swiper-button-prev:hover,
+    .main-slider>.swiper-button-next:hover{
+      border: 2px solid black;
     }
     .main-slider>.swiper-button-prev{
-      left: -24px;
+      left: -30px;
     }
     .main-slider>.swiper-button-next{
-      right: -24px;
+      right: -30px;
     }
     .main-slider>.swiper-button-prev button,
     .main-slider>.swiper-button-next button{
-      width: 48px;
-      height: 48px;
+      width: 56px;
+      height: 56px;
+      border: none;
       border-radius: 50%;
       background-position: center;
       background-repeat: no-repeat;
@@ -620,6 +642,8 @@
       z-index: 2;
       display: flex;
       justify-content: space-between;
+      border-bottom-right-radius: 16px;
+      border-bottom-left-radius: 16px;
       padding: 6px 16px;
     }
     .main-slider .slide-view-all{
@@ -635,14 +659,20 @@
     }
     .main-slider .slide-control{
       display: flex;
+      justify-content: space-between;
       align-items: center;
       color: white;
+      gap: 5px;
     }
     .slide-footer-wrap .swiper-pagination,
     .slide-footer-wrap .swiper-button-prev,
     .slide-footer-wrap .swiper-button-next{
       position: static;
       color: white;
+    }
+    .swiper-pagination-fraction{
+      width: auto;
+      margin-right: 10px;
     }
     .slide-footer-wrap .swiper-button-prev,
     .slide-footer-wrap .swiper-button-next,
@@ -654,6 +684,21 @@
       background-size: cover;
       margin-top: 0;
     }
+    .slide-footer-wrap .swiper-button-play-control{
+      width: 24px;
+      height: 24px;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+    .slide-footer-wrap .swiper-button-play-control.flag-playing{
+      background-size: 20px 20px;
+      background-image: url(./assets/images/slider-nav-stop.png);
+    }
+    .slide-footer-wrap .swiper-button-play-control.flag-stop{
+      background-size: 10px auto;
+      background-image: url(./assets/images/slider-nav-play.png);
+    }
     .slide-footer-wrap .swiper-button-prev{
       background-image: url(./assets/images/slider-nav-prev.png);
     }
@@ -663,9 +708,6 @@
     .slide-footer-wrap .swiper-button-prev::after,
     .slide-footer-wrap .swiper-button-next::after{
       display: none;
-    }
-    .slide-footer-wrap .swiper-button-play-control img{
-      height: 100%;
     }
     .swiper-pagination-current{
       color: #f7b02a;
@@ -702,7 +744,7 @@
       display: inline-block;
       position: absolute;
       top: 50%;
-      right: -8px;
+      right: -12px;
       transform: translateY(-50%);
       width: 1px;
       height: 24px;
@@ -746,7 +788,8 @@
 
     /* 주요서비스 */
     .sec-main-service .container{
-      padding: 45px 15px;
+      padding: 45px 0;
+      max-width: 1172px;
     }
     .sec-main-service h2{
       font-weight: 700;
@@ -983,24 +1026,27 @@
     .sec-agroinfo ul{
       display: flex;
       justify-content: space-around;
-      align-items: center;
+      align-items: flex-start;
     }
     .sec-agroinfo a{
       display: flex;
       flex-flow: column nowrap;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
+      /* white-space: nowrap; */
     }
     .sec-agroinfo .imgbox{
-      width: 93px;
-      height: 95px;
+      width: 90%;
+      max-width: 110px;
       border-radius: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
     }
     .sec-agroinfo .imgbox img{
+      width: 80%;
       vertical-align: middle;
+      object-fit: contain;
     }
     .sec-agroinfo .imgbox:hover{
       background-color: #c3ebeb;
@@ -1047,9 +1093,23 @@
       bottom: 0px;
       right: 0;
     }
+    .swiper-sub .swiper-control-sub img:hover{
+      border: 2px solid black;
+      border-radius: 50%;
+    }
     .swiper-wrapper-sub .swiper-slide{
       border: 1px solid #ddd;
       border-radius: 12px;
+      overflow: hidden;
+    }
+    .swiper-wrapper-sub .swiper-slide .imgbox{
+      overflow: hidden;
+    }
+    .swiper-wrapper-sub .swiper-slide img{
+      transition: 0.4s;
+    }
+    .swiper-wrapper-sub .swiper-slide img:hover{
+      transform: scale(1.1);
     }
     .swiper-wrapper-sub .banner-detail{
       padding: 20px;
@@ -1076,7 +1136,250 @@
       width: 10px;
       height: 10px;
     }
+    .swiper-wrapper-sub .banner-detail h3{
+      display: inline-block;
+      margin-bottom: 4px;
+      padding: 4px 8px;
+      font-size: 14px;
+    }
+    .swiper-wrapper-sub .banner-detail .primis{
+      background-color: #fff2c6;
+      color: #937100;
+    }
+    .swiper-wrapper-sub .banner-detail .secundo{
+      background-color: #e5f0ff;
+      color: #0054c8;
+    }
+    .swiper-wrapper-sub .banner-detail .tertius{
+      background-color: #e1fcdc;
+      color: #179300;
+    }
+    .swiper-wrapper-sub .banner-detail .quartus{
+      background-color: #ffe2e0;
+      color: #ca261c;
+    }
     /* 서브배너 끝 */
+
+    /* 미디어 시작 */
+    .sec-media{
+      padding: 24px 0;
+    }
+    .sec-media .container{
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .sec-media .art-media{
+      flex: 1;
+    }
+    .sec-media h2{
+      font-weight: 700;
+      font-size: 26px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .sec-media .view-more{
+      width: 40px;
+      height: 40px;
+    }
+    .sec-media .content a{
+      position: relative;
+    }
+    .sec-media .content .imgbox{
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      padding-bottom: 62%;
+    }
+    .sec-media .content img{
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .sec-media .content .txt{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      color: white;
+      padding: 10px 16px;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%);
+    }
+    /* 미디어 끝 */
+
+    /* sns 시작 */
+    .sec-sns{
+      padding: 24px 0;
+    }
+    .sec-sns .container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      margin-bottom: 40px;
+    }
+    .sec-sns .container::after{
+      content: '';
+      display: inline-block;
+      position: absolute;
+      left: 230px;
+      right: 340px;
+      top: 50%;
+      height: 2px;
+      transform: translateY(-50%);
+      background-color: #d8e1fb;
+    }
+    .sec-sns .imgbox{
+      width: 215px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+    }
+    .sec-sns .sns-icon{
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .sns-icon li{
+      width: 36px;
+      height: 36px;
+    }
+    /* sns 끝 */
+
+
+    /* 푸터 시작 */
+    .footer{
+      position: relative;
+      background-color: #393c41;
+      padding: 36px 3vw;
+    }
+    .footer .container{
+      max-width: 1190px;
+      display: flex;
+      flex-flow: column nowrap;
+    }
+    .site-map{
+      width: 100%;
+      position: relative;
+    }
+    .site-map dl{
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      gap: 4px 16px;
+    }
+    .site-map dt{
+      color: white;
+      cursor: pointer;
+      background-color: #2c3131;
+      border-radius: 4px;
+      padding: 0 20px;
+      width: calc(20% - 13px);
+      height: 44px;
+      font-size: 17px;
+      line-height: 44px;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+    }
+    .site-map dt::after{
+      content: '';
+      display: inline-block;
+      position: absolute;
+      right: 20px;
+      top: 60%;
+      transform: translateY(-50%);
+      margin-top: -7px;
+      border: 7px solid rgba(0,0,0,0);
+      border-bottom-color: white;
+      border-width: 7px 7px 6px;
+    }
+    .site-map dt.flag-open::after{
+      transform:rotate(180deg);
+    }
+    .site-map dd{
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 50px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 20px;
+    }
+    .site-map dd h3{
+      color: #336;
+      border-bottom: 2px solid #336;
+      padding: 10px 0 15px;
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+    .site-map dd ul{
+      display: flex;
+      flex-flow: row wrap;
+      padding-top: 10px;
+    }
+    .site-map dd li{
+      width: 20%;
+      font-size: 14px;
+      line-height: 16px;
+      padding: 5px 0;
+    }
+    .site-map dd li:hover{
+      text-decoration: underline;
+    }
+    .footer-mid{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-nav ul{
+      display: flex;
+      justify-content: flex-start;
+      color: white;
+      font-size: 17px;
+    }
+    .footer-nav ul li::after{
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #777;
+      margin: 0 10px;
+    }
+    .footer-nav ul li:last-child::after{
+      display: none;
+    }
+    .footer-nav ul strong{
+      font-weight: 600;
+      color: #f7b02a;
+    }
+    .footer-mid .flag{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin: 24px 0;
+    }
+    .footer-bot{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 300;
+      color: white;
+    }
+    .footer-bot p.copyright{
+      margin-top: 16px;
+      opacity: 0.5;
+      font-weight: 500;
+    }
+    /* 푸터 끝 */
+
+
     @media(max-width:1366px){
       .sec-agroinfo ul{
         flex-flow: row wrap;
@@ -1086,13 +1389,8 @@
         margin: 10px 0;
       }
       .sec-agroinfo .imgbox{
-        width: 110px;
-        height: 102px;
+        width: 80%;
         margin-bottom: 10px;
-      }
-      .sec-agroinfo .imgbox img{
-        width: 105px;
-        height: 102px;
       }
     }
     /* 주요서비스 두줄로 변경
@@ -1100,8 +1398,14 @@
        사이트 맵 네비 배치 3-2로 변경
        푸터 사이트맵-링크-국기/로고-주소/저작권 표기-콜센터 로고 순으로 한줄씩 차지 */
     @media(max-width:1180px){
+      .sec .container{
+        margin: 0 3vw;
+      }
       .header .container{
-        padding: 0 3vh;
+        padding: 0 3vw;
+      }
+      .sec-promotion .container{
+        margin: 0 3vw;
       }
       .service-icon ul{
         flex-wrap: wrap;
@@ -1111,7 +1415,6 @@
         margin-bottom: 25px;
       }
       .sec-inform .container{
-        margin: 0 3vw;
         width: auto;
         flex-flow: row wrap;
       }
@@ -1125,11 +1428,38 @@
       .art-participation{
         width: 100%;
       }
-      .sec-agroinfo .container{
-        margin: 0 3vw;
+      .sec-sns .container{
+        margin-bottom: 40px;
       }
-      .sec-subbanner .container{
-        margin: 0 3vw;
+      .footer{
+        padding: 40px 3vw;
+      }
+      .footer .container{
+        flex-flow: row wrap;
+      }
+      .footer-mid{
+        width: 100%;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        padding-top: 26px;
+      }
+      .footer-nav{
+        width: 100%;
+      }
+      .footer-nav ul{
+        flex-flow: row  wrap;
+        justify-content: center;
+      }
+      .footer-bot{
+        width: 100%;
+        flex-flow: row wrap;
+        justify-content: center;
+        padding-top: 20px;
+      }
+      .address{
+        width: 100%;
+        text-align: center;
       }
     }
 
@@ -1141,7 +1471,6 @@
        검색창은 헤더 왼쪽 로고는 가운데 이동
        헤더 아래 두칸짜리 두줄로 변경
        주요서비스 네줄로 변경
-       
        푸터 스타일 유지 */
     @media(max-width:1025px){
       .header .container{
@@ -1149,12 +1478,17 @@
         flex-flow: row wrap;
         justify-content: space-between;
         align-items: center;
-        /* padding: 0; */
+        padding: 0;
       }
       .will-fixed{
         order: 2;
         width: 100%;
-        padding: 10px 0 0 0;
+        align-items: center;
+        flex-flow: row wrap;
+      }
+      .fixed-box-wrap{
+        width: 100%;
+        padding: 10px 3vw 0;
         align-items: center;
         flex-flow: row wrap;
       }
@@ -1277,8 +1611,11 @@
         display: none;
       }
       .sec-promotion{
+        padding: 20px 0 0;
+      }
+      .sec-promotion .container{
+        display: flex;
         flex-flow: row wrap;
-        padding: 20px 30px 0;
         gap: 25px;
       }
       .promotion-slider{
@@ -1293,24 +1630,59 @@
         font-size: 20px;
       }
       .mayor .mayor-shortcut li::after{
-        right: -60px;
+        right: -50px;
       }
       .service-icon li{
         width: 25%;
+      }
+      .site-map dt{
+        width: calc(50% - 8px);
+      }
+      .site-map dd{
+        bottom: 100%;
+      }
+      .site-map dd li{
+        width: 25%;
+      }
+    }
+
+    @media(max-width:824px){
+      .site-map dd li{
+        width: 33.3333%;
       }
     }
     /* 일일뉴스 한줄로
        sns구역 로고-아이콘 순으로 두줄 */
     @media(max-width:768px){
-
+      .sec-inform .news-nav a.btn{
+        display: none;
+      }
+      .sec-media .container{
+        flex-flow: column nowrap;
+      }
+      .sec-media .art-media{
+        flex: 1;
+      }
+      .sec-sns .container{
+        flex-flow: column nowrap;
+        justify-content: center;
+        gap: 10px;
+      }
+      .sec-sns .container::after{
+        display: none;
+      }
+    }
+    @media(max-width:624px){
+      .site-map dd li{
+        width: 50%;
+      }
     }
   </style>
 </head>
 <body>
 
   <div id="skip-menu">
-    <a href="#"></a>
-    <a href="#"></a>
+    <a href="#main">본문 바로가기</a>
   </div>
 
   <div id="modal"><!-- z-index:1200 -->
@@ -1606,798 +1978,800 @@
                헤더부분 아래로 스크롤 시 헤더 화면 위에 고정 -->
     <header id="header" class="header">
       <div class="container"><!-- display:grid -->
-        <div class="will-fixed"><!-- display:flex 로고와 네비게이션 포함 -->
-          <h1><a href="./index.html"><img src="./assets/images/logo.png" alt="인천광역시"></a></h1>
-          <nav class="nav"><!-- display:grid -->
-            <ul class="header-depth1"><!-- display:flex -->
-              <li>
-                <p class="nav-tit"><a href="#">인천소식</a></p><!-- depth1 -->
-                <ul class="header-depth2"><!-- z-index:1000 -->
-                  <div class="nav-title nav-title-news"><!-- depth2 -->
-                    <p class="nav-p">시민이 행복한 인천</p>
-                    <h2 class="nav-h2">인천소식</h2>
-                  </div>
-                  <div class="depth2-wrap">
-                    <li><!-- depth2 -->
-                      <a href="#"><span>새소식</span></a>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>주요행사정보</span></a>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>보도/해명</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>보도자료</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>설명자료</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>고시/공고/시보</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span class="linkhtml">고시공고</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>인천시보</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>반상회보</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span class="linkhtml">입법예고</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>매체모음</span></a>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>카드뉴스</span></a>
-                    </li>
-                  </div>
-                </ul>
-              </li>
-              <li>
-                <p class="nav-tit"><a href="#">시민참여</a></p><!-- depth1 -->
-                <ul class="header-depth2">
-                  <div class="nav-title nav-title-partici"><!-- depth2 -->
-                    <p class="nav-p">시민이 행복한 인천</p>
-                    <h2 class="nav-h2">시민참여</h2>
-                  </div>
-                  <div class="depth2-wrap">
-                    <li><!-- depth2 -->
-                      <a href="#"><span class="linkhtml">제안/토론</span></a>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span class="linkhtml">주민참여예산</span></a>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>비영리단체</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>비영리단체 되기</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>비영리단체 회원</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>비영리단체 메뉴 이용 신청</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>공익활동지원사업</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>비영리단체 사랑방</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>자료실</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>중간지원조직 네트워크</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>네트워크 구성이야기</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>네트워크 활동이야기</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>네트워크 협치이야기</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>스마트도시 리빙랩</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>스마트도시 리빙랩 소개</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>시민참여계획</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>시민활동현황</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>관련자료실</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>시민의소리</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>자유게시판</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>칭찬합니다</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span class="linkhtml">설문조사</span></a>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span class="linkhtml">이벤트</span></a>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span class="linkhtml">공모전</span></a>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>문자알림서비스</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>맞춤형 시정정보</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span class="linkhtml">인천알리미</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span class="linkhtml">대기환경정보</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span class="linkhtml">주정차위반단속</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>인천愛뜰 사용허가 신청</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>인천愛뜰 소개</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>인천愛뜰 사용허가 절차</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>인천愛뜰 사용허가 신청</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>허가조건/유의사항</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>행사일정</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>공공기관 청년아르바이트</span></a>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>생생시정견학</span></a>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>고향사랑기부제</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>제도취지</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>인천시 대표 답례품</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>기금사업</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>각종 홍보자료</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>기부금 접수·운용현황</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>자주묻는질문</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>제도 관련 건의사항</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                  </div>
-                </ul>
-              </li>
-              <li>
-                <p class="nav-tit"><a href="#">민원</a></p><!-- depth1 -->
-                <ul class="header-depth2">
-                  <div class="nav-title nav-title-minwon"><!-- depth2 -->
-                    <p class="nav-p">시민이 행복한 인천</p>
-                    <h2 class="nav-h2">민원</h2>
-                  </div>
-                  <div class="depth2-wrap">
-                    <li><!-- depth2 -->
-                      <a href="#"><span>민원안내</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>민원실 이용안내</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>민원24(어디서나민원)</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>무인민원발급기</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>여권민원</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>민원소식</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span class="linkhtml">자동차민원</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>민원편람(서식)</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>미추홀콜센터</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>센터소개</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>오시는길</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>상담안내</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>전화상담 예약</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>고마워요 120</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>민원신청</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>민원상담</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>비영리단체 회원</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>비영리단체 메뉴 이용 신청</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>공익활동지원사업</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>비영리단체 사랑방</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>자료실</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>민원조회</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>민원상담 처리결과</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>방문민원 처리결과</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>나의신고제안보기</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>민원사례조회</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>신고센터</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>부패·공익·부정청탁신고</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>예산낭비신고</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span class="linkhtml">안전신고</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>건설부조리신고</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>인권침해구제</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>체육인 인권침해구제</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>일본수출규재 피해기업 신청</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span class="linkhtml">불합리규제 신고</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>행정서비스 헌장</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>행정서비스헌장 전문</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>공통이행기준</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>분야별 이행기준</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span class="linkhtml">온라인 행정심판</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>전자팩스 수신조회</span></a>
-                      <ul class="header-depth3">
-                        <li>
-                          <a href="#">전자팩스 수신조회 서비스</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </div>
-                </ul>
-              </li>
-              <li>
-                <p class="nav-tit"><a href="#">인천소개</a></p><!-- depth1 -->
-                <ul class="header-depth2">
-                  <div class="nav-title nav-title-intro"><!-- depth2 -->
-                    <p class="nav-p">시민이 행복한 인천</p>
-                    <h2 class="nav-h2">인천소개</h2>
-                  </div>
-                  <div class="depth2-wrap">
-                    <li><!-- depth2 -->
-                      <a href="#"><span>인천안내</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>인천안내</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>행정구역</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span class="linkhtml">인천도시브랜드</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>인천비전슬로건</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span class="linkhtml">인천색</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>인천노래</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>미디어로 보는 인천</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>역대시장</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>시민상</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>인천시 QR코드</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>시청안내</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>조직도</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>직원/담당업무</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>전화번호/팩스번호 안내</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>중앙협력본부 안내</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>부서 위치 안내</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>시설물 대관 안내</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>주차장 이용안내</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>찾아오시는 길</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>인천역사</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>유래와 연혁</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>시대별 역사</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>인천설화</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>지명유래</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>인천인물</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>사진으로 보는 역사</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>오늘의 역사</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>역사자료실</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>(구)역사자료관</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>賞賞인천</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>기관표창</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>표창추천 및 후보자 공개검증</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>행정자료실</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>행정자료실 이용안내</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span>국제교류</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>자매도시</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>우호도시</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>국제기구 소개</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>국제기구 소식</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>교류정보</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>해외도시 교류사진전</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                  </div>
-                </ul>
-              </li>
-              <li>
-                <p class="nav-tit none-border"><a href="#">분야별 정보</a></p><!-- depth1 -->
-                <ul class="header-depth2">
-                  <div class="nav-title nav-title-info"><!-- depth2 -->
-                    <p class="nav-p">시민이 행복한 인천</p>
-                    <h2 class="nav-h2">분야별 정보</h2>
-                  </div>
-                  <div class="depth2-wrap">
-                    <li><!-- depth2 -->
-                      <a href="#"><span class="linkhtml">교통·도로</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>시내버스 노선개편</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>버스·택시·지하철</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>교통·주차</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>해상·항공</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>도로정보</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>경인고속도로</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>통합게시판</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span class="linkhtml">농업·수산·해양</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>농업</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>수산</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>해양</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>도매시장</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>인천특산물</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>통합게시판</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span class="linkhtml">문화·관광</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>인천문화</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>문화시설</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>무형문화재 전수교육관</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>건축물 미술작품</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>인천관광</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>외국어표기사전</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>통합게시판</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span class="linkhtml">도시·주택·토지</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>도시계획</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>도시재생·정비</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>도시경관</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>도시개발</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>건축·건설·주택</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>토지정보</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>통합게시판</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span class="linkhtml">경제·투자</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>인천경제</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>소비자</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>소상공인</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>청년</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>통합게시판</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span class="linkhtml">건강·식품·체육</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>의료</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>건강</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>식품위생</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>지역사회돌봄</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>체육</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>통합게시판</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span class="linkhtml">복지</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>인천복지기준선</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>복지/교육</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>여성가족</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>영유아</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>복지시설 및 단체현황</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>일·생활균형</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>통합게시판</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span class="linkhtml">재난·안전</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>시민행동요령</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>재난·지진정보</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>기상·생활·안전</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>특별사법경찰</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>민방위</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>집중안전점검</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>통합게시판</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span class="linkhtml">환경</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>탄소중립</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>GCF</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>미세먼지·오존</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>물</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>자연 생활</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>자원순환</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>통합게시판</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- depth2 -->
-                      <a href="#"><span class="linkhtml">행정·세무·법무</span></a>
-                      <ul class="header-depth3">
-                        <li><!-- depth3 -->
-                          <a href="#"><span>정보화</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>청렴인천</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>법무·계약·세무</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>적극행정</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>지역공동체</span></a>
-                        </li>
-                        <li><!-- depth3 -->
-                          <a href="#"><span>통합게시판</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                  </div>
-                </ul>
-              </li>
-            </ul>
-            <div id="btn-modal"><img src="./assets/images/btn-modal.png" alt=""></div>
-            <div id="btn-search"><img src="./assets/images/ico-search.png" alt=""></div>
-          </nav>
-          <div id="btn-mobile-search"><img src="./assets/images/search.svg" alt=""></div>
-          <div id="mobile-nav-btn">
-            <img data-set="open" src="./assets/images/nav-btn.svg" alt="">
-            <!-- <img src="./assets/images/ico-close.svg" alt=""> -->
+        <div id="fixed-box" class="will-fixed"><!-- display:flex 로고와 네비게이션 포함 -->
+          <div class="fixed-box-wrap">
+            <h1><a href="./index.html"><img src="./assets/images/logo.png" alt="인천광역시"></a></h1>
+            <nav class="nav"><!-- display:grid -->
+              <ul class="header-depth1"><!-- display:flex -->
+                <li>
+                  <p class="nav-tit"><a href="#">인천소식</a></p><!-- depth1 -->
+                  <ul class="header-depth2"><!-- z-index:1000 -->
+                    <div class="nav-title nav-title-news"><!-- depth2 -->
+                      <p class="nav-p">시민이 행복한 인천</p>
+                      <h2 class="nav-h2">인천소식</h2>
+                    </div>
+                    <div class="depth2-wrap">
+                      <li><!-- depth2 -->
+                        <a href="#"><span>새소식</span></a>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>주요행사정보</span></a>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>보도/해명</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>보도자료</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>설명자료</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>고시/공고/시보</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span class="linkhtml">고시공고</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>인천시보</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>반상회보</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span class="linkhtml">입법예고</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>매체모음</span></a>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>카드뉴스</span></a>
+                      </li>
+                    </div>
+                  </ul>
+                </li>
+                <li>
+                  <p class="nav-tit"><a href="#">시민참여</a></p><!-- depth1 -->
+                  <ul class="header-depth2">
+                    <div class="nav-title nav-title-partici"><!-- depth2 -->
+                      <p class="nav-p">시민이 행복한 인천</p>
+                      <h2 class="nav-h2">시민참여</h2>
+                    </div>
+                    <div class="depth2-wrap">
+                      <li><!-- depth2 -->
+                        <a href="#"><span class="linkhtml">제안/토론</span></a>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span class="linkhtml">주민참여예산</span></a>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>비영리단체</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>비영리단체 되기</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>비영리단체 회원</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>비영리단체 메뉴 이용 신청</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>공익활동지원사업</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>비영리단체 사랑방</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>자료실</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>중간지원조직 네트워크</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>네트워크 구성이야기</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>네트워크 활동이야기</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>네트워크 협치이야기</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>스마트도시 리빙랩</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>스마트도시 리빙랩 소개</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>시민참여계획</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>시민활동현황</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>관련자료실</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>시민의소리</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>자유게시판</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>칭찬합니다</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span class="linkhtml">설문조사</span></a>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span class="linkhtml">이벤트</span></a>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span class="linkhtml">공모전</span></a>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>문자알림서비스</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>맞춤형 시정정보</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span class="linkhtml">인천알리미</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span class="linkhtml">대기환경정보</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span class="linkhtml">주정차위반단속</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>인천愛뜰 사용허가 신청</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>인천愛뜰 소개</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>인천愛뜰 사용허가 절차</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>인천愛뜰 사용허가 신청</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>허가조건/유의사항</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>행사일정</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>공공기관 청년아르바이트</span></a>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>생생시정견학</span></a>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>고향사랑기부제</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>제도취지</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>인천시 대표 답례품</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>기금사업</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>각종 홍보자료</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>기부금 접수·운용현황</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>자주묻는질문</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>제도 관련 건의사항</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                    </div>
+                  </ul>
+                </li>
+                <li>
+                  <p class="nav-tit"><a href="#">민원</a></p><!-- depth1 -->
+                  <ul class="header-depth2">
+                    <div class="nav-title nav-title-minwon"><!-- depth2 -->
+                      <p class="nav-p">시민이 행복한 인천</p>
+                      <h2 class="nav-h2">민원</h2>
+                    </div>
+                    <div class="depth2-wrap">
+                      <li><!-- depth2 -->
+                        <a href="#"><span>민원안내</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>민원실 이용안내</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>민원24(어디서나민원)</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>무인민원발급기</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>여권민원</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>민원소식</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span class="linkhtml">자동차민원</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>민원편람(서식)</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>미추홀콜센터</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>센터소개</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>오시는길</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>상담안내</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>전화상담 예약</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>고마워요 120</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>민원신청</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>민원상담</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>비영리단체 회원</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>비영리단체 메뉴 이용 신청</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>공익활동지원사업</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>비영리단체 사랑방</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>자료실</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>민원조회</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>민원상담 처리결과</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>방문민원 처리결과</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>나의신고제안보기</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>민원사례조회</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>신고센터</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>부패·공익·부정청탁신고</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>예산낭비신고</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span class="linkhtml">안전신고</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>건설부조리신고</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>인권침해구제</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>체육인 인권침해구제</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>일본수출규재 피해기업 신청</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span class="linkhtml">불합리규제 신고</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>행정서비스 헌장</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>행정서비스헌장 전문</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>공통이행기준</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>분야별 이행기준</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span class="linkhtml">온라인 행정심판</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>전자팩스 수신조회</span></a>
+                        <ul class="header-depth3">
+                          <li>
+                            <a href="#">전자팩스 수신조회 서비스</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </div>
+                  </ul>
+                </li>
+                <li>
+                  <p class="nav-tit"><a href="#">인천소개</a></p><!-- depth1 -->
+                  <ul class="header-depth2">
+                    <div class="nav-title nav-title-intro"><!-- depth2 -->
+                      <p class="nav-p">시민이 행복한 인천</p>
+                      <h2 class="nav-h2">인천소개</h2>
+                    </div>
+                    <div class="depth2-wrap">
+                      <li><!-- depth2 -->
+                        <a href="#"><span>인천안내</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>인천안내</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>행정구역</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span class="linkhtml">인천도시브랜드</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>인천비전슬로건</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span class="linkhtml">인천색</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>인천노래</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>미디어로 보는 인천</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>역대시장</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>시민상</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>인천시 QR코드</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>시청안내</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>조직도</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>직원/담당업무</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>전화번호/팩스번호 안내</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>중앙협력본부 안내</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>부서 위치 안내</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>시설물 대관 안내</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>주차장 이용안내</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>찾아오시는 길</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>인천역사</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>유래와 연혁</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>시대별 역사</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>인천설화</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>지명유래</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>인천인물</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>사진으로 보는 역사</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>오늘의 역사</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>역사자료실</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>(구)역사자료관</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>賞賞인천</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>기관표창</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>표창추천 및 후보자 공개검증</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>행정자료실</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>행정자료실 이용안내</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span>국제교류</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>자매도시</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>우호도시</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>국제기구 소개</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>국제기구 소식</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>교류정보</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>해외도시 교류사진전</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                    </div>
+                  </ul>
+                </li>
+                <li>
+                  <p class="nav-tit none-border"><a href="#">분야별 정보</a></p><!-- depth1 -->
+                  <ul class="header-depth2">
+                    <div class="nav-title nav-title-info"><!-- depth2 -->
+                      <p class="nav-p">시민이 행복한 인천</p>
+                      <h2 class="nav-h2">분야별 정보</h2>
+                    </div>
+                    <div class="depth2-wrap">
+                      <li><!-- depth2 -->
+                        <a href="#"><span class="linkhtml">교통·도로</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>시내버스 노선개편</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>버스·택시·지하철</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>교통·주차</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>해상·항공</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>도로정보</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>경인고속도로</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>통합게시판</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span class="linkhtml">농업·수산·해양</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>농업</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>수산</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>해양</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>도매시장</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>인천특산물</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>통합게시판</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span class="linkhtml">문화·관광</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>인천문화</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>문화시설</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>무형문화재 전수교육관</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>건축물 미술작품</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>인천관광</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>외국어표기사전</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>통합게시판</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span class="linkhtml">도시·주택·토지</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>도시계획</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>도시재생·정비</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>도시경관</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>도시개발</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>건축·건설·주택</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>토지정보</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>통합게시판</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span class="linkhtml">경제·투자</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>인천경제</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>소비자</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>소상공인</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>청년</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>통합게시판</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span class="linkhtml">건강·식품·체육</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>의료</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>건강</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>식품위생</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>지역사회돌봄</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>체육</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>통합게시판</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span class="linkhtml">복지</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>인천복지기준선</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>복지/교육</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>여성가족</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>영유아</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>복지시설 및 단체현황</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>일·생활균형</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>통합게시판</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span class="linkhtml">재난·안전</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>시민행동요령</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>재난·지진정보</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>기상·생활·안전</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>특별사법경찰</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>민방위</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>집중안전점검</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>통합게시판</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span class="linkhtml">환경</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>탄소중립</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>GCF</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>미세먼지·오존</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>물</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>자연 생활</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>자원순환</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>통합게시판</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><!-- depth2 -->
+                        <a href="#"><span class="linkhtml">행정·세무·법무</span></a>
+                        <ul class="header-depth3">
+                          <li><!-- depth3 -->
+                            <a href="#"><span>정보화</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>청렴인천</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>법무·계약·세무</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>적극행정</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>지역공동체</span></a>
+                          </li>
+                          <li><!-- depth3 -->
+                            <a href="#"><span>통합게시판</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                    </div>
+                  </ul>
+                </li>
+              </ul>
+              <div id="btn-modal"><img src="./assets/images/btn-modal.png" alt=""></div>
+              <div id="btn-search"><img src="./assets/images/ico-search.png" alt=""></div>
+            </nav>
+            <div id="btn-mobile-search"><img src="./assets/images/search.svg" alt=""></div>
+            <div id="mobile-nav-btn">
+              <img data-set="open" src="./assets/images/nav-btn.svg" alt="">
+            </div>
+            <div id="mobile-member-btn">
+              <button>로그인</button>
+              <button>회원가입</button>
+            </div>
+            <div id="mobile-lang-utill">
+              <a href="#"><span>한국어</span></a>
+              <ul class="foreign-language">
+                <li><a href="#"><img src="./assets/images/gnb-flag-english.png" alt="영어/English"></a></li>
+                <li><a href="#"><img src="./assets/images/gnb-flag-japanese.png" alt="일본어/にほんご"></a></li>
+                <li><a href="#"><img src="./assets/images/gnb-flag-chinese.png" alt="중국어/简体中文"></a></li>
+              </ul>
+            </div>
           </div>
-          <div id="mobile-member-btn">
-            <button>로그인</button>
-            <button>회원가입</button>
-          </div>
-          <div id="mobile-lang-utill">
-            <a href="#"><span>한국어</span></a>
-            <ul class="foreign-language">
-              <li><a href="#"><img src="./assets/images/gnb-flag-english.png" alt="영어/English"></a></li>
-              <li><a href="#"><img src="./assets/images/gnb-flag-japanese.png" alt="일본어/にほんご"></a></li>
-              <li><a href="#"><img src="./assets/images/gnb-flag-chinese.png" alt="중국어/简体中文"></a></li>
-            </ul>
-          </div>
+          
         </div>
         <div class="global-nav">
           <ul>
@@ -2472,7 +2846,7 @@
 
 
     <main id="main" class="main">
-      <section class="sec sec-promotion">
+      <section id="header-standard" class="sec sec-promotion">
         <div class="container">
           <h2 class="none">시정 홍보</h2>
           <article class="art promotion-slider main-slider">
@@ -2492,12 +2866,11 @@
             </div>
 
             <div class="slide-footer-wrap">
-              <button class="slide-view-all">전체보기</button>
+              <button class="slide-view-all"><a href="#">전체보기</a></button>
               <div class="slide-control">
-                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination1"></div>
                 <div class="swiper-button-prev btn-prev"></div>
-                <div class="swiper-button-play-control" style="width: 25px;">
-                  <img src="./assets/images/slider-nav-stop.png" alt="멈춤버튼">
+                <div id="btn-slide-main1" class="swiper-button-play-control flag-playing">
                 </div>
                 <div class="swiper-button-next btn-next"></div>
               </div>
@@ -2911,8 +3284,7 @@
               <div class="slide-control">
                 <div class="swiper-pagination-2"></div>
                 <div class="swiper-button-prev btn-prev-2"></div>
-                <div class="swiper-button-play-control" style="width: 25px;">
-                  <img src="./assets/images/slider-nav-stop.png" alt="멈춤버튼">
+                <div id="btn-slide-main2" class="swiper-button-play-control flag-playing">
                 </div>
                 <div class="swiper-button-next btn-next-2"></div>
               </div>
@@ -3006,7 +3378,7 @@
                 <div class="swiper-button-prev btn-prev-sub">
                   <img src="./assets/images/slider-arrow-left.png" alt="">
                 </div>
-                <div class="swiper-button-play-control">
+                <div id="btn-slide-sub" class="swiper-button-play-control flag-playing">
                   <img src="./assets/images/slider-control-stop.png" alt="멈춤버튼">
                 </div>
                 <div class="swiper-button-next btn-next-sub">
@@ -3108,10 +3480,217 @@
           </div>
         </div>
       </section>
+      <section class="sec sec-media">
+        <div class="container">
+          <article class="art-media daily-news">
+            <h2>
+              <span>일일뉴스</span>
+              <div class="view-more"><a href="#"><img src="./assets/images/btn-view-more.png" alt=""></a></div>
+            </h2>
+            <div class="content">
+              <a href="#">
+                <div class="imgbox"><img src="./assets/images/dailynews.png" alt=""></div>
+                <div class="txt">외국학술지 원문 복사 무료 서비스 안내</div>
+              </a>
+            </div>
+          </article>
+          <article class="art-media tour">
+            <h2>
+              <span>인천여행</span>
+              <div class="view-more"><a href="#"><img src="./assets/images/btn-view-more.png" alt=""></a></div>
+            </h2>
+            <div class="content">
+              <a href="#">
+                <div class="imgbox"><img src="./assets/images/incheon_drow.jpg" alt=""></div>
+                <div class="txt">인천인이 그린 인천</div>
+              </a>
+            </div>
+          </article>
+          <article class="art-media incheon-news">
+            <h2>
+              <span>인천미디어</span>
+              <div class="view-more"><a href="#"><img src="./assets/images/btn-view-more.png" alt=""></a></div>
+            </h2>
+            <div class="content">
+              <a href="#">
+                <div class="imgbox"><img src="./assets/images/media.jpg" alt=""></div>
+                <div class="txt">2024년 갑진년 새해맞이 현충탑 참배</div>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="sec sec-sns">
+        <div class="container">
+          <h2>
+            <span class="none">sns</span>
+            <div class="imgbox"><img src="./assets/images/sns-title.png" alt=""></div>
+          </h2>
+          <ul class="sns-icon">
+            <li><a href="#"><img src="./assets/images/sns-insta.png" alt=""></a></li>
+            <li><a href="#"><img src="./assets/images/sns-facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="./assets/images/sns-youtube.png" alt=""></a></li>
+            <li><a href="#"><img src="./assets/images/sns-twitter.png" alt=""></a></li>
+            <li><a href="#"><img src="./assets/images/sns-kakaostory.png" alt=""></a></li>
+            <li><a href="#"><img src="./assets/images/sns-blog.png" alt=""></a></li>
+            <li><a href="#"><img src="./assets/images/sns-post.png" alt=""></a></li>
+          </ul>
+        </div>
+      </section>
     </main>
-    <footer id="footer" class="footer"></footer>
+    <footer id="footer" class="footer">
+      <div class="container">
+        <h2 class="none">푸터</h2>
+        <div class="site-map">
+          <dl>
+            <dt class="sitemap-tit"><span>인천광역시 누리집</span></dt>
+            <dd class="sitemap-data">
+              <h3>인천광역시 누리집</h3>
+              <ul>
+                <li><a href="#">굿모닝인천</a></li>
+                <li><a href="#">시험정보</a></li>
+                <li><a href="#">온라인통합예약시스템</a></li>
+                <li><a href="#">웹진 MOO</a></li>
+                <li><a href="#">인천광역시장실</a></li>
+                <li><a href="#">인천은 소통이 가득</a></li>
+                <li><a href="#">인천일자리포털</a></li>
+                <li><a href="#">자치법규정보</a></li>
+                <li><a href="#">정보공개포털</a></li>
+                <li><a href="#">자원순환 선도도시 인천</a></li>
+                <li><a href="#">인천데이터포털</a></li>
+                <li><a href="#">인천와이파이</a></li>
+                <li><a href="#">주민참여예산</a></li>
+                <li><a href="#">인천국민안전체험관</a></li>
+                <li><a href="#">캠프마켓</a></li>
+                <li><a href="#">e-book</a></li>
+                <li><a href="#">인천도시브랜드</a></li>
+                <li><a href="#">인천독서대전</a></li>
+                <li><a href="#">맞춤형수혜서비스</a></li>
+                <li><a href="#">인천주거포털</a></li>
+                <li><a href="#">기타(개별 누리집)</a></li>
+              </ul>
+            </dd>
+            <dt class="sitemap-tit"><span>직속기관/사업소 등</span></dt>
+            <dd class="sitemap-data">
+              <h3>직속기관/사업소 등</h3>
+              <ul>
+                <li><a href="#">인재개발원</a></li>
+                <li><a href="#">보건환경연구원</a></li>
+                <li><a href="#">농업기술센터</a></li>
+                <li><a href="#">소방본부</a></li>
+                <li><a href="#">소방학교</a></li>
+                <li><a href="#">경제자유구역청</a></li>
+                <li><a href="#">상수도사업본부</a></li>
+                <li><a href="#">도시철도건설본부</a></li>
+                <li><a href="#">종합건설본부</a></li>
+                <li><a href="#">문화예술회관</a></li>
+                <li><a href="#">미추홀도서관</a></li>
+                <li><a href="#">시립박물관</a></li>
+                <li><a href="#">여성복지관</a></li>
+                <li><a href="#">여성의광장</a></li>
+                <li><a href="#">서부여성회관</a></li>
+                <li><a href="#">아동복지관</a></li>
+                <li><a href="#">공원사업소(인천의 공원)</a></li>
+                <li><a href="#">남촌농축산도매시장관리사무소</a></li>
+                <li><a href="#">삼산농산물도매시장관리사무소</a></li>
+                <li><a href="#">수산자원연구소</a></li>
+                <li><a href="#">수산기술지원센터</a></li>
+                <li><a href="#">중앙협력본부</a></li>
+                <li><a href="#">인천자치경찰위원회</a></li>
+                <li><a href="#">인천광역시의회</a></li>
+              </ul>
+            </dd>
+            <dt class="sitemap-tit"><span>자치군·구</span></dt>
+            <dd class="sitemap-data">
+              <h3>자치군·구</h3>
+              <ul>
+                <li><a href="#">강화군</a></li>
+                <li><a href="#">옹진군</a></li>
+                <li><a href="#">중구</a></li>
+                <li><a href="#">동구</a></li>
+                <li><a href="#">미추홀구</a></li>
+                <li><a href="#">연수구</a></li>
+                <li><a href="#">남동구</a></li>
+                <li><a href="#">부평구</a></li>
+                <li><a href="#">계양구</a></li>
+                <li><a href="#">서구</a></li>
+              </ul>
+            </dd>
+            <dt class="sitemap-tit"><span>공사공단/출자출연</span></dt>
+            <dd class="sitemap-data">
+              <h3>공사공단/출자출연</h3>
+              <ul>
+                <li><a href="#">인천교통공사</a></li>
+                <li><a href="#">인천도시공사</a></li>
+                <li><a href="#">인천관광공사</a></li>
+                <li><a href="#">인천시설공단</a></li>
+                <li><a href="#">인천환경공사</a></li>
+                <li><a href="#">인천글로벌캠퍼스</a></li>
+                <li><a href="#">인천문화재단</a></li>
+                <li><a href="#">인천광역시사회서비스원</a></li>
+                <li><a href="#">인천스마트시티</a></li>
+                <li><a href="#">인천신용보증재단</a></li>
+                <li><a href="#">인천여성가족재단</a></li>
+                <li><a href="#">인천연구원</a></li>
+                <li><a href="#">인천광역시의료원</a></li>
+                <li><a href="#">(재)인천인재평생교육진흥원</a></li>
+                <li><a href="#">인천종합에너지주식회사</a></li>
+                <li><a href="#">인천테크노파크</a></li>
+              </ul>
+            </dd>
+            <dt class="sitemap-tit"><span>정부/지자체</span></dt>
+            <dd class="sitemap-data">
+              <h3>정부/지자체</h3>
+              <ul>
+                <li><a href="#">중앙행정기관</a></li>
+                <li><a href="#">서울특별시</a></li>
+                <li><a href="#">부산광역시</a></li>
+                <li><a href="#">대구광역시</a></li>
+                <li><a href="#">인천광역시</a></li>
+                <li><a href="#">광주광역시</a></li>
+                <li><a href="#">대전광역시</a></li>
+                <li><a href="#">울산광역시</a></li>
+                <li><a href="#">세종특별자치시</a></li>
+                <li><a href="#">경기도</a></li>
+                <li><a href="#">강원특별자치도</a></li>
+                <li><a href="#">충청북도</a></li>
+                <li><a href="#">충청남도</a></li>
+                <li><a href="#">전라북도</a></li>
+                <li><a href="#">전라남도</a></li>
+                <li><a href="#">경상북도</a></li>
+                <li><a href="#">경상남도</a></li>
+                <li><a href="#">제주특별자치도</a></li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+        <div class="footer-mid">
+          <div class="footer-nav">
+            <ul>
+              <li><a href="#">누리집 이용안내</a></li>
+              <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+              <li><a href="#">저작권정책</a></li>
+              <li><a href="#">이메일무단수집거부</a></li>
+              <li><a href="#">누리집 안내지도</a></li>
+            </ul>
+          </div>
+          <div class="flag">
+            <div class="imgbox"><a href="#"><img src="./assets/images/logo-koreansymbol.png" alt=""></a></div>
+            <div class="imgbox"><a href="#"><img src="./assets/images/logo-webaccess.png" alt=""></a></div>
+          </div>
+        </div>
+        <div class="footer-bot">
+          <address class="address">
+            <p>21554 인천광역시 남동구 정각로 29(구월동) TEL:(032)120</p>
+            <p class="copyright">© Incheon Metropolitan City. All rights reserved.</p>
+          </address>
+          <div class="callcenter"><a href="#"><img src="./assets/images/logo-michuhol.png" alt=""></a></div>
+        </div>
+      </div>
+    </footer>
   </section>
   <script src="./assets/js/swiper-bundle.min.js"></script>
+  <script src="./assets/js/jquery.min.js"></script>
   <script>
     //-------------------- 함수구역 --------------------
     function fnSetActive(el,opt){
@@ -3134,10 +3713,29 @@
     function fnSetColor(el,opt){
       el.style.color=opt;
     }
+
+    function fnGetCoords(el) {
+      let box = el.getBoundingClientRect();
+      return {
+        top:box.top,
+        right: box.right,
+        bottom: box.bottom,
+        left: box.left,
+        abTop: box.top + window.pageYOffset,
+        abRight: box.right + window.pageXOffset,
+        abBottom: box.bottom + window.pageYOffset,
+        abLeft: box.left + window.pageXOffset
+      };
+    }
+    
+    
     //-------------------- 함수구역 종료 --------------------
 
 
     //-------------------- swiper --------------------
+    let btn1=document.getElementById('btn-slide-main1');
+    let btn2=document.getElementById('btn-slide-main2');
+    let btnSub1=document.getElementById('btn-slide-sub');
     const swiper1 = new Swiper('.swiper-promotion', {
       // Optional parameters
       direction: 'horizontal',
@@ -3146,7 +3744,7 @@
       autoplay:true,
       // If we need pagination
       pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-pagination1',
         type:'fraction',
         renderFraction: function (currentClass, totalClass) {
           return '<span class="' + currentClass + '"></span>' +
@@ -3164,6 +3762,17 @@
         el: '.swiper-scrollbar',
       },
     });
+    
+    btn1.onclick=function(){
+      if(btn1.classList.contains('flag-playing')){
+        swiper1.autoplay.stop();
+        btn1.classList.replace('flag-playing','flag-stop');
+      }
+      else if(btn1.classList.contains('flag-stop')){
+        swiper1.autoplay.start();
+        btn1.classList.replace('flag-stop','flag-playing');
+      }
+    }
 
     const swiper2 = new Swiper('.swiper-participation', {
       // Optional parameters
@@ -3192,6 +3801,17 @@
       },
     });
 
+    btn2.onclick=function(){
+      if(btn2.classList.contains('flag-playing')){
+        swiper2.autoplay.stop();
+        btn2.classList.replace('flag-playing','flag-stop');
+      }
+      else if(btn2.classList.contains('flag-stop')){
+        swiper2.autoplay.start();
+        btn2.classList.replace('flag-stop','flag-playing');
+      }
+    }
+
     const swiperSub = new Swiper('.swiper-sub', {
       // Optional parameters
       direction: 'horizontal',
@@ -3199,8 +3819,11 @@
       mousewheel:false,
       autoplay:true,
       spaceBetween:'16px',
-      slidesPerView:3,
+      slidesPerView:2,
       breakpoints:{
+        768:{
+          slidesPerView:3
+        },
         1025:{
           slidesPerView:4,
         },
@@ -3216,18 +3839,34 @@
         prevEl: '.btn-prev-sub',
       },
     });
+    btnSub1.onclick=function(){
+      if(btnSub1.classList.contains('flag-playing')){
+        swiperSub.autoplay.stop();
+        btnSub1.classList.replace('flag-playing','flag-stop');
+        btnSub1.children[0].setAttribute('src','./assets/images/slider-control-play.png');
+      }
+      else if(btnSub1.classList.contains('flag-stop')){
+        swiperSub.autoplay.start();
+        btnSub1.classList.replace('flag-stop','flag-playing');
+        btnSub1.children[0].setAttribute('src','./assets/images/slider-control-stop.png');
+      }
+    }
     //-------------------- swiper --------------------
 
 
     //-------------------- 모달 제어 --------------------
     const modal=document.getElementById('modal');
+    const modalBody=document.getElementById('modal-body');
     const btnModal=document.getElementById('btn-modal');
     const btnModalClose=document.getElementById('btn-modal-close');
+    const body=document.querySelector('body');
     btnModal.onclick=function(){
       fnSetActive(modal,'on');
+      body.style.overflow='hidden';
     }
     btnModalClose.onclick=function(){
       fnSetActive(modal,'off');
+      body.style.overflow='auto';
     }
     //-------------------- 모달 제어 종료 --------------------
 
@@ -3270,6 +3909,31 @@
       }
     }
     //-------------------- 윈도우 이벤트 종료 --------------------
+
+
+    //-------------------- 헤더 제어 --------------------
+    let headerStandard=document.getElementById('header-standard');
+    let fixedBox=document.getElementById('fixed-box');
+    window.onscroll=function(){
+      let coords=fnGetCoords(headerStandard);
+      if(coords.top<0){
+        fixedBox.style.left=0;
+        fixedBox.style.right=0;
+        fixedBox.style.top=0;
+        fixedBox.style.position='fixed';
+        fixedBox.style.zIndex='15';
+        fixedBox.style.margin='0 auto';
+      }
+      else if(coords.top>0){
+        fixedBox.style.left='auto';
+        fixedBox.style.right='auto';
+        fixedBox.style.top='auto';
+        fixedBox.style.position='relative';
+        fixedBox.style.zIndex='1100';
+        fixedBox.style.margin='0';
+      }
+    }
+    //-------------------- 헤더 제어 종료 --------------------
 
 
     //-------------------- 헤더네비 제어 --------------------
@@ -3371,6 +4035,31 @@
       }
     }
     //-------------------- 게시판 제어 종료 --------------------
+
+
+    //-------------------- 푸터 제어 --------------------
+    let sitemapTit=document.getElementsByClassName('sitemap-tit');
+    let sitemapData=document.getElementsByClassName('sitemap-data');
+    for(let i=0;i<sitemapTit.length;i++){
+      sitemapTit[i].onclick=function(){
+        if(sitemapData[i].classList.contains('flag-open')){
+          sitemapTit[i].classList.remove('flag-open');
+          fnSetDisplay(sitemapData[i],'none');
+          sitemapData[i].classList.remove('flag-open');
+        }
+        else{
+          for(let j=0;j<sitemapTit.length;j++){
+            sitemapTit[j].classList.remove('flag-open');
+            fnSetDisplay(sitemapData[j],'none');
+            sitemapData[j].classList.remove('flag-open');
+          }
+          sitemapTit[i].classList.add('flag-open');
+          fnSetDisplay(sitemapData[i],'block');
+          sitemapData[i].classList.add('flag-open');
+        }
+      }
+    }
+    //-------------------- 푸터 제어 종료 --------------------
   </script>
 </body>
 </html>
