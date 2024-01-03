@@ -2209,22 +2209,10 @@
     window.onscroll=function(){
       let coords=fnGetCoords(headerStandard);
       if(coords.top<0){
-        fixedBox.style.left=0;
-        fixedBox.style.right=0;
-        fixedBox.style.top=0;
-        fixedBox.style.position='fixed';
-        fixedBox.style.zIndex='15';
-        fixedBox.style.margin='0 auto';
-        fixedBox.style.padding='0 3vw';
+        fnFixedboxActive(fixedBox);
       }
       else if(coords.top>0){
-        fixedBox.style.left='auto';
-        fixedBox.style.right='auto';
-        fixedBox.style.top='auto';
-        fixedBox.style.position='relative';
-        fixedBox.style.zIndex='1100';
-        fixedBox.style.margin='0';
-        fixedBox.style.padding='0';
+        fnFixedboxDeactive(fixedBox);
       }
     }
     //-------------------- 헤더 제어 종료 --------------------
@@ -2281,7 +2269,6 @@
     let langUtill=document.getElementById('mobile-lang-utill')
     mobileNavBtn.onclick=function(){
       let nowSet=mobileNavBtn.children[0].getAttribute('data-set');
-      let nowImg=mobileNavBtn.children[0].getAttribute('src');
 
       if(nowSet=='open'){
         fnSetDisplay(nav,'grid');
