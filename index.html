@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="./assets/css/header.css">
   <link rel="stylesheet" href="./assets/css/main.css">
   <link rel="stylesheet" href="./assets/css/footer.css">
+  <link rel="stylesheet" href="./assets/css/aside.css">
 </head>
 <body>
   <div id="skip-menu">
@@ -2020,6 +2021,7 @@
         </div>
       </div>
     </footer>
+    <aside id="aside" class="aside"><img src="./assets/images/btn_top.png" alt="위로가기"></aside>
   </section>
   <script src="./assets/js/swiper-bundle.min.js"></script>
   <script src="./assets/js/function.js"></script>
@@ -2340,6 +2342,16 @@
       }
     }
     //-------------------- 푸터 제어 종료 --------------------
+
+
+    //-------------------- 어사이드 제어 --------------------
+    let aside=document.getElementById('aside');
+    aside.onclick=function(){
+      window.scroll({
+        top:0,
+      })
+    }
+    //-------------------- 어사이드 제어 종료 --------------------
   </script>
 </body>
 </html>
