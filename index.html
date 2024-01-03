@@ -2194,10 +2194,12 @@
       if(nowOption=='pc'){
         fnSetActive(mobileNavBtn,'off');
         fnSetActive(btnHeadSearch,'off');
+        fnSetDisplay(nav,'flex');
       }
       else if(nowOption=='mobile'){
         fnSetActive(mobileNavBtn,'on');
         fnSetActive(btnHeadSearch,'on');
+        fnSetDisplay(nav,'none');
       }
     }
     //-------------------- 윈도우 이벤트 종료 --------------------
