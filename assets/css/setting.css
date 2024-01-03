@@ -6,6 +6,7 @@
   color: #333;
   --color-info-hover-bg:#c3ebeb;
   --color-text-active:#0053b5;
+  scroll-behavior: smooth;
 }
 ::selection{
   background-color: #474747;
