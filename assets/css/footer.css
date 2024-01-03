@@ -48,7 +48,7 @@
   transform:rotate(180deg);
 }
 .site-map dd{
-  display: none;
+  /* display: none; */
   position: absolute;
   left: 0;
   right: 0;
@@ -57,6 +57,14 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 20px;
+  transform: scaleY(0);
+  transition: 0.2s;
+  transition-timing-function: linear;
+  overflow: hidden;
+  transform-origin: center bottom;
+}
+.site-map dd.flag-open{
+  transform: scaleY(1);
 }
 .site-map dd h3{
   color: #336;
