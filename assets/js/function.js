@@ -35,3 +35,22 @@ function fnGetCoords(el) {
     abLeft: box.left + window.scrollX
   };
 }
+
+function fnFixedboxActive(el){
+  el.style.left=0;
+  el.style.right=0;
+  el.style.top=0;
+  el.style.position='fixed';
+  el.style.zIndex='15';
+  el.style.margin='0 auto';
+  el.style.padding='0 3vw';
+}
+function fnFixedboxDeactive(el){
+  el.style.left='auto';
+  el.style.right='auto';
+  el.style.top='auto';
+  el.style.position='relative';
+  el.style.zIndex='1100';
+  el.style.margin='0';
+  el.style.padding='0';
+}
