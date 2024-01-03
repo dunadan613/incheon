@@ -2147,11 +2147,11 @@
 
 
     //-------------------- 모달 제어 --------------------
-    const modal=document.getElementById('modal');
-    const modalBody=document.getElementById('modal-body');
-    const btnModal=document.getElementById('btn-modal');
-    const btnModalClose=document.getElementById('btn-modal-close');
-    const body=document.querySelector('body');
+    let modal=document.getElementById('modal');
+    let modalBody=document.getElementById('modal-body');
+    let btnModal=document.getElementById('btn-modal');
+    let btnModalClose=document.getElementById('btn-modal-close');
+    let body=document.querySelector('body');
     btnModal.onclick=function(){
       fnSetActive(modal,'on');
       body.style.overflow='hidden';
