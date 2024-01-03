@@ -487,6 +487,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  gap: 5px;
 }
 .weather-top .indicium-icon{
   width: 28px;
@@ -498,6 +499,7 @@
 .weather-top .indicium-txt span{
   position: relative;
   z-index: 838;
+  font-size: 14px;
 }
 .weather-top .indicium-date{
   font-size: 12px;
@@ -508,9 +510,9 @@
   position: absolute;
   left: -6px;
   bottom: 3px;
-  width: 113%;
-  height: 13px;
-  border-radius: 19px;
+  width: 110%;
+  height: 10px;
+  border-radius: 18px;
   background-color: #ffdf5f;
   z-index: 837;
 }
@@ -525,6 +527,7 @@
 .weather-bot .wearher-temperature{
   font-size: 24px;
   font-weight: 700;
+  margin-right: 10px;
 }
 .weather-bot .dust-info a{
   display: flex;
@@ -539,6 +542,9 @@
 @media(max-width:1180px){
   .header .container{
     padding: 0 3vw;
+  }
+  .theme-weather .weather-top{
+    display: none;
   }
 }
 
