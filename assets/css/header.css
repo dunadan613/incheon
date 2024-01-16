@@ -52,8 +52,6 @@
   justify-content: center;
   align-items: center;
 }
-
-/* 헤더네비 스타일 */
 .nav{
   display: flex;
 }
@@ -314,8 +312,6 @@
   width: 45px;
   height: 30px;
 }
-/* 헤더네비 스타일 끝 */
-
 .global-nav{
   grid-area: gnav;
 }
@@ -399,7 +395,6 @@
   align-items: center;
   cursor: pointer;
 }
-
 .header .header-theme{
   grid-area: theme;
   display: flex;
@@ -414,7 +409,6 @@
   width: auto;
   height: 43px;
 }
-
 .header-theme .theme-search{
   margin: 24px;
   max-width: 680px;
@@ -476,7 +470,6 @@
 .theme-search fieldset a span{
   font-size: 0;
 }
-
 .header-theme .theme-weather{
   display: flex;
   flex-flow: column nowrap;
@@ -538,7 +531,6 @@
 .weather-bot .dust-info a span:first-child{
   margin-right: 5px;
 }
-
 @media(max-width:1180px){
   .header .container{
     padding: 0 3vw;
@@ -547,7 +539,6 @@
     display: none;
   }
 }
-
 @media(max-width:1025px){
   .header .container{
     display: flex;

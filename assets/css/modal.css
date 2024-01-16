@@ -24,7 +24,6 @@
   border-radius: 16px;
   padding: 40px;
   background-color: white;
-  /* overflow: auto; */
 }
 #modal-body:focus{
   outline: 2px solid black;

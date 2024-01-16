@@ -129,14 +129,13 @@
 .swiper-pagination-current{
   color: #f7b02a;
 }
-
 .mayor{
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
   width: calc(50% - 20px);
 }
-.mayor .imgbox{
+.mayor .mayor-banner{
   box-shadow: 0 0.25rem 0.25rem rgba(12,24,58,.13);
   border: 1px solid #e2e8fc;
   border-radius: 16px;
@@ -149,61 +148,45 @@
 }
 .mayor .mayor-shortcut ul{
   display: flex;
-  justify-content: space-around;
-  padding: 12px 14px;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 12px;
+  width: 100%;
 }
 .mayor .mayor-shortcut li{
   text-align: center;
   position: relative;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
 }
-.mayor .mayor-shortcut li::after{
+.mayor-shortcut li::after{
   content: '';
   display: inline-block;
   position: absolute;
+  right: 0;
   top: 50%;
-  right: -12px;
   transform: translateY(-50%);
   width: 1px;
   height: 24px;
   background-color: rgba(255,255,255,.4);
 }
-.mayor .mayor-shortcut li:last-child:after{
+.mayor-shortcut li:last-child::after{
   display: none;
 }
 .mayor-shortcut li a{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  height: 24px;
 }
-.mayor-shortcut li a::before,
-.mayor-shortcut li a::after{
-  content: '';
-  display: inline-block;
+.mayor-shortcut li .imgbox{
   width: 24px;
   height: 24px;
-  background-repeat: no-repeat;
 }
-.mayor-shortcut li a::before{
-  background-position: left center;
-}
-.mayor-shortcut li a.mayor-room::before{
-  background-image: url(../images/link-mayoroffice.png);
-}
-.mayor-shortcut li a.mayor-menifesto::before{
-  background-image: url(../images/link-manifesto.png);
-}
-.mayor-shortcut li a.mayor-message::before{
-  background-image: url(../images/link-message.png);
-}
-.mayor-shortcut li a::after{
-  background-position: right center;
-  background-image: url(../images/arrow_forward.png);
-}
-/* 메인 위 끝 */
-
-
-/* 주요서비스 */
 .sec-main-service .container{
   padding: 45px 0;
   max-width: 1172px;
@@ -238,9 +221,6 @@
   width: 69px;
   height: 68px;
 }
-/* 주요서비스 끝 */
-
-/* 단어 시작 */
 .sec-keyword .container{
   padding: 30px 0;
   background-color: #f7f7f7;
@@ -265,9 +245,6 @@
   background-color: white;
   font-size: 18px;
 }
-/* 단어 끝 */
-
-/* 메인 2 시작 */
 .sec-inform .container{
   display: flex;
   justify-content: space-between;
@@ -425,9 +402,6 @@
 .participation-slider{
   position: relative;
 }
-/* 메인 2 끝 */
-
-/* 분야별 정보 시작 */
 .sec-agroinfo{
   background-color: #f3f8fb;
   max-width: 100%;
@@ -450,7 +424,6 @@
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
-  /* white-space: nowrap; */
 }
 .sec-agroinfo .imgbox{
   width: 90%;
@@ -468,9 +441,6 @@
 .sec-agroinfo .imgbox:hover{
   background-color: #c3ebeb;
 }
-/* 분야별 정보 끝 */
-
-/* 서브배너 시작 */
 .sec-subbanner .container{
   padding-top: 16px;
 }
@@ -575,9 +545,6 @@
   background-color: #ffe2e0;
   color: #ca261c;
 }
-/* 서브배너 끝 */
-
-/* 미디어 시작 */
 .sec-media{
   padding: 24px 0;
 }
@@ -623,9 +590,6 @@
   padding: 10px 16px;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%);
 }
-/* 미디어 끝 */
-
-/* sns 시작 */
 .sec-sns{
   padding: 24px 0;
 }
@@ -662,8 +626,6 @@
   width: 36px;
   height: 36px;
 }
-/* sns 끝 */
-
 @media(max-width:1366px){
   .sec-agroinfo ul{
     flex-flow: row wrap;
@@ -677,10 +639,12 @@
     margin-bottom: 10px;
   }
 }
-
 @media(max-width:1180px){
   .sec-promotion .container{
     margin: 0 3vw;
+  }
+  .mayor .mayor-shortcut li{
+    font-size: 14px;
   }
   .service-icon ul{
     flex-wrap: wrap;
@@ -707,8 +671,10 @@
     margin-bottom: 40px;
   }
 }
-
 @media(max-width:1025px){
+  .mayor .mayor-shortcut li{
+    font-size: 18px;
+  }
   .sec-promotion{
     padding: 20px 0 0;
   }
@@ -728,15 +694,22 @@
     justify-content: space-around;
     font-size: 20px;
   }
-  .mayor .mayor-shortcut li::after{
-    right: -50px;
-  }
   .service-icon li{
     width: 25%;
   }
 }
-
 @media(max-width:768px){
+  .mayor .mayor-shortcut li{
+    font-size: 16px;
+  }
+  .mayor-shortcut li a{
+    flex-flow: column nowrap;
+    gap: 0;
+    height: auto;
+  }
+  .mayor-shortcut li .arrow{
+    display: none;
+  }
   .sec-inform .news-nav a.btn{
     display: none;
   }

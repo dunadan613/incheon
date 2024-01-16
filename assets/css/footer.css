@@ -48,7 +48,6 @@
   transform:rotate(180deg);
 }
 .site-map dd{
-  /* display: none; */
   position: absolute;
   left: 0;
   right: 0;
@@ -166,7 +165,6 @@
     text-align: center;
   }
 }
-
 @media(max-width:1025px){
   .site-map dt{
     width: calc(50% - 8px);
@@ -178,13 +176,11 @@
     width: 25%;
   }
 }
-
 @media(max-width:824px){
   .site-map dd li{
     width: 33.3333%;
   }
 }
-
 @media(max-width:624px){
   .site-map dd li{
     width: 50%;
